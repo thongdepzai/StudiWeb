@@ -7,6 +7,7 @@ class SigupSerializers(serializers.ModelSerializer):
     class Meta:
         model = Customer
         fields = '__all__'
+    
 
 class SiginSerializers(serializers.ModelSerializer):
     Email = serializers.CharField(max_length=500)

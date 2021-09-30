@@ -53,6 +53,7 @@ class Customer(models.Model):
     Birthday = models.CharField(max_length=100)
     Email = models.EmailField(max_length=200)
     Pass = models.CharField(max_length=100)
+    Sex = models.CharField(max_length=200)  
 
     def __str__(self):
         return self.Name
