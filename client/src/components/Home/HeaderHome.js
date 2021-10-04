@@ -1,30 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import React  from 'react'
 import {makeStyles} from '@material-ui/core/styles'
-import { AppBar, Button, Collapse, IconButton,   Toolbar } from '@material-ui/core';
+import { AppBar, Button,  IconButton,   Toolbar } from '@material-ui/core';
 import SortIcon from '@material-ui/icons/Sort';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import {  Link  as Scroll} from 'react-scroll'
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import {useHistory } from 'react-router-dom'
+import Divider from '@mui/material/Divider';
+
 
 
 const useStyle =    makeStyles((theme)=> ({
     root:{
         display:"flex",
-        justifyContent: 'center',
-        alignItems: 'center',
-        height:'100vh',
+        height:'10vh',
         fontFamily: 'Nunito',
-
+        position: 'absolute',
+        top: theme.spacing(1),
+        
     },
+
     appbar:{
         background: 'none',
+        color: '#002884',
+        backgroundColor: '#fafafa',
+        border:1,
+
+
+
+
+
     },
     appbarWrapper:{
         width:"80%",
         margin: "0 auto",
+
     },
     icon:{
         color:"#0091ea",
@@ -71,10 +81,7 @@ const useStyle =    makeStyles((theme)=> ({
     };
 
      const classes =useStyle();
-     const [checked,setChecked] = useState(false);
-     useEffect(()=>{
-         setChecked(true)
-     },[])
+    
 
 
      const deleteLocal = () =>{
@@ -84,8 +91,10 @@ const useStyle =    makeStyles((theme)=> ({
 
     const Header1 = (
 
-        <div className={classes.root} id="header" >
-        <AppBar className={classes.appbar} elevation={0}>
+        <div className={classes.root} id="header"  >
+        <AppBar className={classes.appbar} elevation={0}
+          
+        >
             <Toolbar className={classes.appbarWrapper}>
             <Link to="/" className={classes.appbarTitle}>
             <h1  >  <span className={classes.colorText}>  MYSTUDY</span> </h1>
@@ -128,25 +137,8 @@ const useStyle =    makeStyles((theme)=> ({
 
                 
             </Toolbar>
+            <Divider/>
         </AppBar>
-
-        <Collapse in={checked} 
-                  {...(checked  ? { timeout: 2000 } : {})}
-                  collapsedHeight={50}
-                  >
-        <div className={classes.container}>
-            <h1 className={classes.title}>
-                Welcome to <br/>  
-                <span className={classes.colorText}>  MYSTUDY</span>.
-            </h1>
-            <Scroll to="select-Study" smooth={true}>
-            <IconButton>
-                <KeyboardArrowDownIcon className={classes.goDown}/>
-            </IconButton>
-            </Scroll>
-        </div>
-        </Collapse>
-
 
     </div>
 
@@ -159,6 +151,7 @@ const useStyle =    makeStyles((theme)=> ({
             <Link to="/" className={classes.appbarTitle}>
             <h1  >  <span className={classes.colorText}>  MYSTUDY</span> </h1>
             </Link>
+                
             
             <IconButton
 
@@ -200,24 +193,10 @@ const useStyle =    makeStyles((theme)=> ({
 
                 
             </Toolbar>
+            <Divider/>
+
         </AppBar>
 
-        <Collapse in={checked} 
-                  {...(checked  ? { timeout: 2000 } : {})}
-                  collapsedHeight={50}
-                  >
-        <div className={classes.container}>
-            <h1 className={classes.title}>
-                Welcome to <br/>  
-                <span className={classes.colorText}>  MYSTUDY</span>.
-            </h1>
-            <Scroll to="select-Study" smooth={true}>
-            <IconButton>
-                <KeyboardArrowDownIcon className={classes.goDown}/>
-            </IconButton>
-            </Scroll>
-        </div>
-        </Collapse>
 
 
     </div>

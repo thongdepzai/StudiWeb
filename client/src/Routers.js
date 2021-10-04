@@ -8,6 +8,9 @@ import SignIn from './components/Customer/Signin'
 import SignUp from './components/Customer/Signup'
 import Profile from './components/Customer/Profile'
 
+import Watch from './components/Video/HomeWatch'
+import StudyUnit from './components/Quiz/StudyUnit'
+
 export default function Routers(){
     return(
         <div>
@@ -19,6 +22,8 @@ export default function Routers(){
                 
                 <Route exact path="/HomeVideo"  component={HomeVideo} />
                 <Route exact path="/HomeQuiz"  component={HomeQuiz} />
+                <Route exact path="/Watch/:id"  component={Watch}/>
+                <Route exact path="/StudyUnit"  component={StudyUnit}/>
 
                 <Route component={Home} />
 

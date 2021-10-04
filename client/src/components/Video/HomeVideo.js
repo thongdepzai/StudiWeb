@@ -1,5 +1,10 @@
 import React from 'react'
 import {makeStyles} from '@material-ui/core/styles'
+import HearderHome from '../Home/HeaderHome';
+import {  CssBaseline } from '@material-ui/core';
+import BodyList from '../Body/BodyList';
+import BodyMain from '../Body/BodyMain';
+
 
 const useStyle =    makeStyles((theme)=> ({
   
@@ -8,8 +13,14 @@ const useStyle =    makeStyles((theme)=> ({
  function HomeVideo(){
      const classes =useStyle();
     return <div >
-        
-    day la HomeVideo
+        <CssBaseline/>
+        <HearderHome/>
+        <BodyList />
+        <BodyMain/>
+
+
+
+    
     </div>
 }
 
