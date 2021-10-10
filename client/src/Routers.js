@@ -10,6 +10,7 @@ import Profile from './components/Customer/Profile'
 
 import Watch from './components/Video/HomeWatch'
 import StudyUnit from './components/Quiz/StudyUnit'
+import quizPage from './components/Quiz/quizPage'
 
 export default function Routers(){
     return(
@@ -24,6 +25,7 @@ export default function Routers(){
                 <Route exact path="/HomeQuiz"  component={HomeQuiz} />
                 <Route exact path="/Watch/:id"  component={Watch}/>
                 <Route exact path="/StudyUnit"  component={StudyUnit}/>
+                <Route exact path="/quiz-page"  component={quizPage}/>
 
                 <Route component={Home} />
 

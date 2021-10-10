@@ -5,6 +5,13 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Hearder from '../Home/HeaderHome';
+import {makeStyles} from '@material-ui/core/styles';
+import './quiz.css';
+import { Container } from '@mui/material';
+import { Grid } from '@material-ui/core';
+import cardQuiz from '../Card/cardQuiz'
+
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -40,12 +47,13 @@ function a11yProps(index) {
 }
 
 export default function VerticalTabs() {
+  
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+ 
   return (
       <div >
       <Hearder/>
@@ -73,7 +81,40 @@ export default function VerticalTabs() {
         Grammar
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Quiz
+        <div className="wrapper">
+          <div className="heading">
+            <h2 className="heading__title">Funy Test</h2>
+          </div>
+          <div className="content">
+          <cardQuiz url="https://benative.vn/wp-content/uploads/2019/03/bai-quiz-tieng-anh-250x240.jpg" title="Bài quiz tiếng Anh chủ đề: Subordinate Conjunction Test"></cardQuiz>
+            <Grid item xs={12}  sm={3} className="grid">
+              <div className="content__item">
+                <a href="/quiz-page"><img src="https://benative.vn/wp-content/uploads/2019/03/bai-quiz-tieng-anh-250x240.jpg" alt="abc" className="content__item--img" /></a>
+                <a href="/quiz-page">Bài quiz tiếng Anh chủ đề: Subordinate Conjunction Test</a>
+                <div className="content__item--button">
+                  <a href="/quiz-page"><button className="button--quiz">Go Now!</button></a>
+                </div>
+              </div>
+            </Grid>
+            
+          </div>
+        </div>
+        <div className="wrapper">
+          <div className="heading">
+            <h2 className="heading__title">Từ vựng - Ngữ Pháp</h2>
+          </div>
+          <div className="content">
+            <Grid item xs={12}  sm={3} className="grid">
+              <div className="content__item">
+                <a href="/quiz-page"><img src="https://benative.vn/wp-content/uploads/2019/03/bai-quiz-tieng-anh-250x240.jpg" alt="abc" className="content__item--img" /></a>
+                <a href="/quiz-page">Bài quiz tiếng Anh chủ đề: Subordinate Conjunction Test</a>
+                <div className="content__item--button">
+                  <a href="/quiz-page"><button className="button--quiz">Go Now!</button></a>
+                </div>
+              </div>
+            </Grid>
+          </div>
+        </div>
       </TabPanel>
      
       </Box>
