@@ -102,16 +102,24 @@ a {
 }
 
 .qp-button__answer {
+    background-position: 50%;
+    background-repeat: no-repeat;
     text-align: left;
     width: 90%;
     padding: 15px 30px;
     margin: 10px;
     background-color: white;
     cursor: pointer;
-    outline: 1px solid rgb(172, 171, 171);
-    border-radius: 2px;
+    border: 1px solid rgb(204, 202, 202);
+    border-radius: 5px;
     box-shadow: 1px 2px 4px rgb(129, 128, 128);
-    border: none;
+    /* border: none; */
+}
+
+.qp-active {
+    color: #1899d6;
+    border-color: #84d8ff;
+    box-shadow: 1px 2px 4px #84d8ff;
 }
 
 .qp-button__answer:hover {

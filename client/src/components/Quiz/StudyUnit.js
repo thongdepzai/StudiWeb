@@ -99,22 +99,6 @@ export default function VerticalTabs() {
             
           </div>
         </div>
-        <div className="wrapper">
-          <div className="heading">
-            <h2 className="heading__title">Từ vựng - Ngữ Pháp</h2>
-          </div>
-          <div className="content">
-            <Grid item xs={12}  sm={3} className="grid">
-              <div className="content__item">
-                <a href="/quiz-page"><img src="https://benative.vn/wp-content/uploads/2019/03/bai-quiz-tieng-anh-250x240.jpg" alt="abc" className="content__item--img" /></a>
-                <a href="/quiz-page">Bài quiz tiếng Anh chủ đề: Subordinate Conjunction Test</a>
-                <div className="content__item--button">
-                  <a href="/quiz-page"><button className="button--quiz">Go Now!</button></a>
-                </div>
-              </div>
-            </Grid>
-          </div>
-        </div>
       </TabPanel>
      
       </Box>
