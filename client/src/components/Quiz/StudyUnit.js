@@ -9,7 +9,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import './quiz.css';
 import { Container } from '@mui/material';
 import { Grid } from '@material-ui/core';
-import cardQuiz from '../Card/cardQuiz'
+import CardQuiz from '../Card/CardQuiz';
 
 
 
@@ -83,19 +83,14 @@ export default function VerticalTabs() {
       <TabPanel value={value} index={2}>
         <div className="wrapper">
           <div className="heading">
-            <h2 className="heading__title">Funy Test</h2>
+            <h2 className="heading__title">Exam Basic</h2>
           </div>
           <div className="content">
-          <cardQuiz url="https://benative.vn/wp-content/uploads/2019/03/bai-quiz-tieng-anh-250x240.jpg" title="Bài quiz tiếng Anh chủ đề: Subordinate Conjunction Test"></cardQuiz>
-            <Grid item xs={12}  sm={3} className="grid">
-              <div className="content__item">
-                <a href="/quiz-page"><img src="https://benative.vn/wp-content/uploads/2019/03/bai-quiz-tieng-anh-250x240.jpg" alt="abc" className="content__item--img" /></a>
-                <a href="/quiz-page">Bài quiz tiếng Anh chủ đề: Subordinate Conjunction Test</a>
-                <div className="content__item--button">
-                  <a href="/quiz-page"><button className="button--quiz">Go Now!</button></a>
-                </div>
-              </div>
-            </Grid>
+          <CardQuiz/>
+          <CardQuiz/>
+          <CardQuiz/>
+          <CardQuiz/>
+          <CardQuiz/>
             
           </div>
         </div>

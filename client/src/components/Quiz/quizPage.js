@@ -24,7 +24,7 @@ const Unit = [
         "answer_2": "Do you like my family name?",
         "answer_3": "How do I say that?",
         "answer_4": "What your name?",
-        "true_answer": 1,  
+        "true_answer": "answer_1",
     },
     {
         "id" : 2,
@@ -33,15 +33,40 @@ const Unit = [
         "answer_2": "It only needs some water.",
         "answer_3": "It's sleeping.",
         "answer_4": "What your name?",
-        "true_answer": 3,  
+        "true_answer": "answer_3",  
     }
 
 ]
 function quizPage(){
+
+
+    const submit = (e)=> {
+        const trueAnswer = document.querySelector(".trueAnswer").innerText;
+        const Answer = document.getElementById(trueAnswer).innerText;
+        const chooseAnswer = document.querySelector(".qp-active")
+        if(!chooseAnswer){
+            alert("chọn đáp án trước khi submit")
+        }else{
+            var ktra = false;
+            if(chooseAnswer.innerText === Answer){
+                ktra = true;
+            }
+            if(ktra){
+                alert("câu trả lời chính xác !")
+                e.target.innerText = "Continue"
+            }else{
+                alert("câu trả lời sai !")
+                e.target.innerText = "Continue"
+            }
+        }
+
+        
+
+    }
     
     return(
         <div className="fullscreen">
-            <Container className="qp-container">
+            <Container className="qp-container--top">
             <div className="qp-content">
                <AnswerItem
                key = {Unit[0].id}
@@ -50,20 +75,24 @@ function quizPage(){
                answer_2 = {Unit[0].answer_2}
                answer_3 = {Unit[0].answer_3}
                answer_4 = {Unit[0].answer_4}
+               true_answer = {Unit[0].true_answer}
                ></AnswerItem>
             </div>
             </Container>
-            <div className="line"></div>
-            <Container className="qp-container">
+            {/* <div className="line"></div> */}
+            <div className="qp-container--bottom">
             <div className="qp-buttons">
-                <Grid item xs={6}>
+                <div className="wrapper--left">
                     <Button variant="outlined">Skip</Button>
-                </Grid>
-                <Grid item xs={6}>
-                    <Button size="large" variant="contained" endIcon={<SendIcon />}>Continue</Button>
-                </Grid>
+                </div>
+                <div className="wrapper--center">
+
+                </div>
+                <div className="wrapper--right">
+                <Button size="large" variant="contained" onClick = {(e) => submit(e)}>Submit</Button>
+                </div>
             </div>
-            </Container>
+            </div>
         </div>
         
     );
