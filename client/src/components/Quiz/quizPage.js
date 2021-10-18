@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 import './quiz.css';
+import AnswerItem from '../Card/AnswerItem';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -36,49 +37,20 @@ const Unit = [
     }
 
 ]
-const answerItem = props =>{
-    <div>
-        <div className="qp-content__question">
-                <h2>{props.question}</h2>
-            </div>
-            <div className="qp-content__answer">
-            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={6}>
-                    <button className="qp-button__answer qp-active" > {props.answer_1}</button>
-                </Grid>
-                <Grid item xs={6}>
-                    <button className="qp-button__answer"  >{props.answer_2}</button>
-                </Grid>
-                <Grid item xs={6}>
-                    <button className="qp-button__answer"  >{props.answer_3}</button>
-                </Grid>
-                <Grid item xs={6}>
-                    <button className="qp-button__answer"  >{props.answer_4}</button>
-                </Grid>
-                </Grid>
-        </div>
-    </div>
-}
-// const Active = (e)=>{
-//     console.log(e.target.className )
-    
-// }
 function quizPage(){
     
     return(
         <div className="fullscreen">
             <Container className="qp-container">
             <div className="qp-content">
-                {Unit.map(unit =>{
-                    <answerItem
-                        key ={unit.id}
-                        question = {unit.question}
-                        answer_1 = {unit.answer_1}
-                        answer_2 = {unit.answer_2}
-                        answer_3 = {unit.answer_3}
-                        answer_4 = {unit.answer_4}
-                    />
-                })}
+               <AnswerItem
+               key = {Unit[0].id}
+               question = {Unit[0].question}
+               answer_1 = {Unit[0].answer_1}
+               answer_2 = {Unit[0].answer_2}
+               answer_3 = {Unit[0].answer_3}
+               answer_4 = {Unit[0].answer_4}
+               ></AnswerItem>
             </div>
             </Container>
             <div className="line"></div>

@@ -31,5 +31,7 @@ export default function cardQuiz(props){
             </div>
         </Grid>
     );
-}
+} 
+
+
     
