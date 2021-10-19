@@ -6,19 +6,24 @@ import BodyList from '../Body/BodyList';
 import BodyMain from '../Body/BodyMain';
 
 
+
+
+
 const useStyle =    makeStyles((theme)=> ({
   
 
 }));
  function HomeVideo(){
+    
+
      const classes =useStyle();
     return <div >
         <CssBaseline/>
         <HearderHome/>
-        <BodyList />
-        <BodyMain/>
-
-
+        <BodyList  />
+        
+         <BodyMain />
+         
 
     
     </div>

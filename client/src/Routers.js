@@ -20,7 +20,7 @@ export default function Routers(){
                 <Route exact path="/Signin"  component={SignIn} />
                 <Route exact path="/Profile"  component={Profile} />
                 
-                <Route exact path="/HomeVideo"  component={HomeVideo} />
+                <Route exact path="/HomeVideo/:Themes"  component={HomeVideo} />
                 <Route exact path="/HomeQuiz"  component={HomeQuiz} />
                 <Route exact path="/Watch/:id"  component={Watch}/>
                 <Route exact path="/StudyUnit"  component={StudyUnit}/>

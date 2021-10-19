@@ -35,6 +35,7 @@ export default function CardVideo({video}) {
       width='1100px'
       height='500px'
       url={video.Video}
+      controls='true'
     
       />
       <CardContent>

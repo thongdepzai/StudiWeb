@@ -27,6 +27,7 @@ class Dictionary(models.Model):
 class StudiVideo(models.Model):
     Video = models.CharField(max_length=500)
     Title = models.CharField(max_length=300)
+    Themes = models.CharField(max_length=300)
 
     def __str__(self):
         return self.Title

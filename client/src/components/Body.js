@@ -19,6 +19,12 @@ const useStyle =    makeStyles((theme)=> ({
 
 }));
  function Body(){
+
+    const [data,setData] =React.useState({
+        home:'home',
+     
+    })
+
      const classes =useStyle();
      const checked = useWindowPosition('header');
     return <div className={classes.root} id="select-Study">
@@ -26,7 +32,7 @@ const useStyle =    makeStyles((theme)=> ({
         <ImageCard study={studys[0]} checked={checked} />
         </Link>
 
-        <Link className={classes.link} to="/HomeVideo">
+        <Link className={classes.link} to={"/HomeVideo/"+data.home}>
         <ImageCard study={studys[1]} checked={checked} />
         </Link>
 
