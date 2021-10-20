@@ -4,10 +4,10 @@ import {Card,List,ListItem ,Divider,Button,ListItemButton} from '@mui/material'
 import { Link } from 'react-router-dom';
 
 const useStyle =    makeStyles((theme)=> ({
-  root:{
-      width:300,
-      height:1000,
-  },
+  // root:{
+  //     width:300,
+  //     height:1000,
+  // },
   button:{
         transition: theme.transitions.create(["background", "background-color"], {
         duration: theme.transitions.duration.complex,
@@ -36,7 +36,7 @@ const useStyle =    makeStyles((theme)=> ({
         </List>
       </nav>
       <Divider />
-      <nav aria-label="main mailbox folders">
+      {/* <nav aria-label="main mailbox folders">
         <List>
           <ListItem  className={classes.button} disablePadding>
               <ListItemButton>
@@ -46,7 +46,7 @@ const useStyle =    makeStyles((theme)=> ({
               </ListItemButton>
           </ListItem>
         </List>
-      </nav>
+      </nav> */}
      
         </Card>
         

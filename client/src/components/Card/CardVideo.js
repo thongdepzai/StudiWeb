@@ -34,7 +34,7 @@ export default function CardVideo({video}) {
         height='1000'
         url={video.Video}
         
-      
+
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

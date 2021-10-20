@@ -34,8 +34,13 @@ export default function CardVideo({video}) {
     <ReactPlayer
       width='1100px'
       height='500px'
+
       url={video.Video}
       controls='true'
+
+      // url={video.Video}
+      
+     
     
       />
       <CardContent>

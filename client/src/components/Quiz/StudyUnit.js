@@ -5,6 +5,13 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Hearder from '../Home/HeaderHome';
+import {makeStyles} from '@material-ui/core/styles';
+import './quiz.css';
+import { Container, List, ListItem } from '@mui/material';
+import { Grid } from '@material-ui/core';
+import CardQuiz from '../Card/CardQuiz';
+
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -40,12 +47,13 @@ function a11yProps(index) {
 }
 
 export default function VerticalTabs() {
+  
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+ 
   return (
       <div >
       <Hearder/>
@@ -67,13 +75,53 @@ export default function VerticalTabs() {
       </Tabs>
       <Box sx={{  height: 626 }}>
       <TabPanel value={value} index={0}>
-        Vocabulary
+        <Grid container spacing={2}>
+        <Grid item xs={6} md={3}>
+          <h4 className="heading__title"> Words To Learn </h4>
+        <Box className="box_vocabulary">
+          
+          <Typography variant="h5" sx={{ textAlign:'center', fontFamily:'monospace'}}> Words To Learn </Typography>
+          <List>
+            <ListItem>
+              <Typography>
+                 asdsad
+              </Typography>
+            </ListItem>
+            
+          </List>
+        </Box>
+
+        </Grid>
+        <Grid xs={6} md={3} sx={{}}>
+        <List>
+          asdsa
+          dasdasd
+          asdasd
+          asd
+        </List>
+        </Grid>
+        </Grid>
+     
+
+       
+
       </TabPanel>
       <TabPanel value={value} index={1}>
         Grammar
       </TabPanel>
+
       <TabPanel value={value} index={2}>
-        Quiz
+          <div className="heading">
+            <h2 className="heading__title">Exam Basic</h2>
+          </div>
+          <div className="content">
+          <CardQuiz/>
+          <CardQuiz/>
+          <CardQuiz/>
+          <CardQuiz/>
+          <CardQuiz/>
+            
+          </div>
       </TabPanel>
      
       </Box>
