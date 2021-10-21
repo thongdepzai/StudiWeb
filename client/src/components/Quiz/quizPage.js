@@ -59,9 +59,6 @@ function quizPage(){
                 e.target.innerText = "Continue"
             }
         }
-
-        
-
     }
     
     return(

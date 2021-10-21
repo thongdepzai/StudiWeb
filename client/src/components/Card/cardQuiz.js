@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Grid } from '@material-ui/core';
 import '../Quiz/quiz.css';
-import { FaHeart } from "react-icons/fa";
 
 
 
