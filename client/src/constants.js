@@ -7,4 +7,8 @@ export const INIT_STATE = {
         isLoading:false,
         data: [],
     },
+    dictionarys:{
+        isLoading:false,
+        data: [],
+    },
 }

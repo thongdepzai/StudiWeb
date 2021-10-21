@@ -4,10 +4,11 @@ import {Card,List,ListItem ,Divider,Button,ListItemButton} from '@mui/material'
 import { Link } from 'react-router-dom';
 
 const useStyle =    makeStyles((theme)=> ({
-  // root:{
-  //     width:300,
-  //     height:1000,
-  // },
+  
+
+  link:{
+    textDecoration: 'none',
+  },
   button:{
         transition: theme.transitions.create(["background", "background-color"], {
         duration: theme.transitions.duration.complex,
@@ -19,38 +20,33 @@ const useStyle =    makeStyles((theme)=> ({
   }
 
 }));
- function BodyHomeQuiz(){
+ function BodyHomeQuiz({unit}){
      const classes =useStyle();
-    return <div >
+
+      return <div >
         
-        <Card>
-        <nav aria-label="main mailbox folders">
-        <List>
-          <ListItem  className={classes.button} disablePadding>
-              <ListItemButton>
-              <Button  >
-                <p> UNIT 1</p>
-            </Button>
-              </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
-      <Divider />
-      {/* <nav aria-label="main mailbox folders">
-        <List>
-          <ListItem  className={classes.button} disablePadding>
-              <ListItemButton>
-              <Button  > 
-                <p> UNIT 1</p>
-            </Button>
-              </ListItemButton>
-          </ListItem>
-        </List>
-      </nav> */}
+      <Card>
+        <Link className={classes.link} to={"/StudyUnit/"+unit} >
+      <nav aria-label="main mailbox folders">
+      <List>
+        <ListItem  className={classes.button} disablePadding>
+            <ListItemButton>
+            <Button  >
+              
+              <p>  Unit {unit} </p>
+          </Button>
+            </ListItemButton>
+        </ListItem>
+      </List>
+    </nav>
+    </Link>
+    <Divider />
      
-        </Card>
-        
-    </div>
+      </Card>
+      
+  </div>
+
+    
 }
 
 export default BodyHomeQuiz;

@@ -167,9 +167,57 @@
 .trueAnswer {
     display: none;
 }
-.box_vocabulary{
-    border-color: #84d8ff;
-    box-shadow: 1px 2px 4px #84d8ff;
-    height: 500px;
-    width: 150px;
+
+
+
+.container{
+    overflow: auto;
+    height: 100%;
+    width: 1300px;
 }
+.box_left{
+    
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    border-color: #84d8ff;
+    box-shadow: 1px 2px 4px 4px #84d8ff;
+    height: 400px;
+    width: 12%;
+    float: left;
+}
+.box_right{
+
+    display: block;
+    text-align: justify;
+    height: 600px;
+    width: 70%;
+    float: right;
+}
+.title_Vocabulary{
+    height: 20px;
+    width: 30px;
+
+}
+.title_left{
+    height: auto;
+    width: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.list_vocabulary{
+    text-align: center;
+    height: 80%;
+    width: 100%;
+}
+.sizeimage{
+    overflow: hidden;
+    object-fit: cover;
+    max-height: 500px;
+    max-width:1000px;
+    
+}
+.frames_grammar{
+    background-color: black;
+}
+
