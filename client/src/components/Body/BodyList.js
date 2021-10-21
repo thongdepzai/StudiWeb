@@ -6,9 +6,26 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-import InboxIcon from '@mui/icons-material/Inbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
 import { makeStyles } from '@material-ui/core/styles';
+import HomeIcon from '@mui/icons-material/Home';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import { Link } from 'react-router-dom';
+import Avatar from '@mui/material/Avatar';
+import TheatersIcon from '@mui/icons-material/Theaters';
+
+import {useDispatch,useSelector} from 'react-redux'
+import * as actions from '../../redux/actions'
+import {videoState$} from '../../redux/selector'
+
+
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import AssistantPhotoIcon from '@mui/icons-material/AssistantPhoto';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,17 +36,42 @@ const useStyles = makeStyles((theme) => ({
        
       
     },
+    link:{
+      textDecoration: 'none',
+      color: '#212121',
+  
+  }
    
   }));
 
-
 export default function BodyList() {
     
-      const classes = useStyles();
+     const classes =useStyles();
 
+     const [data,setData] =React.useState({
+      home:'home',
+      voa:'voa',
+      ted:'ted',
+      bbc:'bbc',
+      ef:'ef',
+      film:'film',
+      toic:'toic',
+     
 
+     
+  
+  })
+
+     const dispatch = useDispatch();
+     const videos =useSelector(videoState$);
+     React.useEffect(()=>{
+        dispatch(actions.getVideos.getVideosRequest())
+     },[dispatch]);
+      
 
   return (
+
+    
     <Box  component="div" className={classes.root} 
     sx={{ width: '100%', maxWidth: 300, bgcolor: 'background.paper', 
     }}
@@ -37,7 +79,7 @@ export default function BodyList() {
     display="flex"
     flexDirection="column"
     // justifyContent="flex-end" # DO NOT USE THIS WITH 'scroll'
-    height="700px" // fixed the height
+    height="650px" // fixed the height
     style={{
       overflow: "hidden",
       overflowY: "scroll" // added scroll
@@ -45,148 +87,170 @@ export default function BodyList() {
     >
       <nav component="div" aria-label="main mailbox folders">
         <List>
+        <Link to=""  className={classes.link}>
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <InboxIcon />
+
+                <HomeIcon />
+
               </ListItemIcon>
-              <ListItemText primary="Inbox" />
+              <ListItemText primary="Home" />
             </ListItemButton>
           </ListItem>
+          </Link>
+
+          <Link to=""  className={classes.link}>
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <DraftsIcon />
+
+                <AutoStoriesIcon />
+
               </ListItemIcon>
-              <ListItemText primary="Drafts" />
+              <ListItemText primary="Blog" />
             </ListItemButton>
           </ListItem>
-        </List>
-      </nav>
-      <Divider />
-      <nav aria-label="main mailbox folders">
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <DraftsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Drafts" />
-            </ListItemButton>
-          </ListItem>
+          </Link>
         </List>
       </nav>
        <Divider />
+
       <nav aria-label="main mailbox folders">
         <List>
+          <Link to={"/HomeVideo/"+data.voa} className={classes.link}>
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <InboxIcon />
+              <Avatar sx={{ bgcolor: "#2196f3" }}>VOA</Avatar>
               </ListItemIcon>
-              <ListItemText primary="Inbox" />
+              <ListItemText primary="VOA Learning English" />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <DraftsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Drafts" />
-            </ListItemButton>
-          </ListItem>
+        </Link>
         </List>
       </nav>
       <nav aria-label="main mailbox folders">
         <List>
+          <Link to={"/HomeVideo/"+data.ted} className={classes.link}>
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <InboxIcon />
+              <Avatar sx={{ bgcolor: "#d50000" }}>TED</Avatar>
               </ListItemIcon>
-              <ListItemText primary="Inbox" />
+              <ListItemText primary="TED" />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <DraftsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Drafts" />
-            </ListItemButton>
-          </ListItem>
+        </Link>
         </List>
       </nav>
       <nav aria-label="main mailbox folders">
         <List>
+          <Link to={"/HomeVideo/"+data.bbc} className={classes.link}>
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <InboxIcon />
+              <Avatar sx={{ bgcolor: "#009688" }}>BBC</Avatar>
               </ListItemIcon>
-              <ListItemText primary="Inbox" />
+              <ListItemText primary="BBC LearnEnglish" />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <DraftsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Drafts" />
-            </ListItemButton>
-          </ListItem>
+        </Link>
         </List>
       </nav>
       <nav aria-label="main mailbox folders">
         <List>
+          <Link to={"/HomeVideo/"+data.ef} className={classes.link}>
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <InboxIcon />
+              <Avatar sx={{ bgcolor: "#1a237e" }}>EF</Avatar>
               </ListItemIcon>
-              <ListItemText primary="Inbox" />
+              <ListItemText primary="EF PodEnglish" />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <DraftsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Drafts" />
-            </ListItemButton>
-          </ListItem>
+        </Link>
         </List>
       </nav>
-      <nav aria-label="main mailbox folders">
-        <List>
+      <Divider />
+
+   <nav  aria-label="main mailbox folders">
+        <List >
+          <Link to={"/HomeVideo/" + data.film} className={classes.link}>
           <ListItem disablePadding>
-            <ListItemButton>
+              <ListItemButton>
               <ListItemIcon>
-                <InboxIcon />
+                <TheatersIcon/>
               </ListItemIcon>
-              <ListItemText primary="Inbox" />
+              <ListItemText primary="Film" />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <DraftsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Drafts" />
-            </ListItemButton>
-          </ListItem>
+        </Link>
         </List>
       </nav>
-     
-     
+      <nav  aria-label="main mailbox folders">
+        <List >
+          <Link to={"/HomeVideo/" + data.toic} className={classes.link}>
+          <ListItem disablePadding>
+              <ListItemButton>
+              <ListItemIcon>
+                <AssistantPhotoIcon/>
+              </ListItemIcon>
+              <ListItemText primary="TOEIC" />
+            </ListItemButton>
+          </ListItem>
+        </Link>
+        </List>
+      </nav>
+    
+   
+      <Divider />
+
+      <nav  aria-label="main mailbox folders">
+        <List >
+          <Link to="" className={classes.link}>
+          <ListItem disablePadding>
+              <ListItemButton>
+              <ListItemIcon>
+                <TwitterIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Twitter" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+              <ListItemButton>
+              <ListItemIcon>
+                <FacebookIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Facebook" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+              <ListItemButton>
+              <ListItemIcon>
+                <YouTubeIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Youtube" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+              <ListItemButton>
+              <ListItemIcon>
+                <InstagramIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Instagram" />
+            </ListItemButton>
+          </ListItem>
+        </Link>
+        </List>
+        
+      </nav>
+      
+
     </Box>
+
+
+
+
   );
 }

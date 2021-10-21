@@ -4,11 +4,11 @@ import { Box, Container } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 
 import CardVideo from '../Card/CardVideo';
-
-
 import {useDispatch,useSelector} from 'react-redux'
 import * as actions from '../../redux/actions'
 import {videoState$} from '../../redux/selector'
+import { useParams } from 'react-router-dom';
+
 
 
 const useStyle =    makeStyles((theme)=> ({
@@ -24,6 +24,9 @@ const useStyle =    makeStyles((theme)=> ({
 }));
 
  function BodyMain(){
+     
+
+    const {Themes} =useParams();
      const dispatch = useDispatch();
      const videos =useSelector(videoState$);
      React.useEffect(()=>{
@@ -32,19 +35,26 @@ const useStyle =    makeStyles((theme)=> ({
 
 
      const classes =useStyle();
+
     return (
         <div className={classes.root}>
-
     <Box >  
         <Container>
         <Grid container spacing={1} alignItems="stretch" >
 
-           {videos.map((video)=>(
+           {videos.map((video)=>{
+               if( Themes === video.Themes  )
+                {     
+                    return(
 
-                <Grid item xs={12}  sm={3}>
-                <CardVideo key={video.id} video={video} />
-                </Grid>
-           ))}
+                        <Grid item xs={12}  sm={3}>
+                        <CardVideo key={video.id} video={video} />
+                        </Grid>
+                    )  
+                           
+                }
+        
+           })}
            
             
         </Grid>

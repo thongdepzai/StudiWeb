@@ -17,8 +17,11 @@ class Quiz(models.Model):
 class Dictionary(models.Model):
     Audio = models.CharField(max_length=500)
     El = models.CharField(max_length=500)
+    syn = models.CharField(max_length=500)
     vi = models.CharField(max_length=500)
-    ExEl = models.CharField(max_length=500)
+    ExEla = models.CharField(max_length=500)
+    ExElb = models.CharField(max_length=500)
+    unit = models.CharField(max_length=100)
     ExVi = models.CharField(max_length=500)
 
     def __str__(self):
@@ -27,6 +30,7 @@ class Dictionary(models.Model):
 class StudiVideo(models.Model):
     Video = models.CharField(max_length=500)
     Title = models.CharField(max_length=300)
+    Themes = models.CharField(max_length=300)
 
     def __str__(self):
         return self.Title

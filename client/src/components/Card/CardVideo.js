@@ -21,15 +21,20 @@ const useStyles = makeStyles((theme) => ({
 export default function CardVideo({video}) {
   const classes = useStyles();
 
+
+  
+
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <Link className={classes.link} to={"/Watch/"+video.id} >
+     
       <CardActionArea>
+      <Link className={classes.link} to={"/Watch/"+video.id} >
       <ReactPlayer
         width='345'
         height='1000'
-        url="https://www.youtube.com/watch?v=DXCGzkVjAN8"
-      
+        url={video.Video}
+        
+
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
@@ -40,8 +45,9 @@ export default function CardVideo({video}) {
             species, ranging across all continents except Antarctica
           </Typography>
         </CardContent>
-      </CardActionArea>
       </Link>
+
+      </CardActionArea>
     </Card>
   );
 }

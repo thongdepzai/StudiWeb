@@ -20,9 +20,9 @@ const useStyles = makeStyles((theme) => ({
    
   }));
 
-export default function BodyListCard({video}) {
+export default function BodyListCard() {
     
-      const classes = useStyles();
+    const classes = useStyles();
 
     const dispatch = useDispatch();
      const videos =useSelector(videoState$);

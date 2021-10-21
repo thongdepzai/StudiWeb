@@ -6,7 +6,7 @@ function* fetchVideoSaga(action){
    try {
 
     const videos = yield call(api.fetchVideo);
-    console.log('[video]',videos)
+    // console.log('[video]',videos)
     yield put(actions.getVideos.getVideosSuccess(videos.data));
        
    } catch (error) {
@@ -41,12 +41,33 @@ function* getLoginSaga(action){
 }
 
 
+
+function* fetchDictionarySaga(action){
+    try {
+ 
+     const dictionary = yield call(api.fetchDictionary);
+    //  console.log('[video]',dictionary)
+     yield put(actions.getDictionary.getDictionarysSuccess(dictionary.data));
+        
+    } catch (error) {
+        console.log(error)
+        yield put(actions.getDictionary.getDictionarysFailure(error))
+        
+    }
+ 
+ 
+ }
+
+
 function* mySaga(){
 
-yield takeLatest(actions.getVideos.getVideosRequest, fetchVideoSaga) //action cuoi dung duoc su li cancle all
+yield takeLatest(actions.getVideos.getVideosRequest, fetchVideoSaga)              
 yield takeLatest(actions.postCustomer.postCustomersRequest,postCustomerSaga )
 yield takeLatest(actions.getLogin.getLoginRequest, getLoginSaga)
+yield takeLatest(actions.getDictionary.getDictionarysRequest, fetchDictionarySaga)              
 
+
+//action cuoi dung duoc su li cancle all
 
 }
 

@@ -27,3 +27,11 @@ export const getLogin = createActions({
     getLoginSuccess: (payload) => payload,
     getLoginFailure: (err)  => err,
 })
+
+
+export const getDictionary = createActions({
+
+    getDictionarysRequest: undefined,
+    getDictionarysSuccess: (payload) => payload,
+    getDictionarysFailure: (err) => err,
+});
