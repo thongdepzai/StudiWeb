@@ -60,8 +60,7 @@ function quizPage(){
             }
         }
 
-        
-
+    
     }
     
     return(
