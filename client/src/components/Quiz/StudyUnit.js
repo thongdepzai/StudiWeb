@@ -184,9 +184,9 @@ export default function VerticalTabs() {
             <h2 className="heading__title">Exam Basic</h2>
           </div>
           <div className="content">
+          {/* <CardQuiz/>
           <CardQuiz/>
-          <CardQuiz/>
-          <CardQuiz/>
+          <CardQuiz/> */}
             
           </div>
       </TabPanel>
