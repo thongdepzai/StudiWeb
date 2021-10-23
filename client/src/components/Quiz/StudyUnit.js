@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Hearder from '../Home/HeaderHome';
 import './quiz.css';
-import {  IconButton, List } from '@mui/material';
+import {  Grid, IconButton, List } from '@mui/material';
 import CardQuiz from '../Card/CardQuiz';
 import ReactPlayer from 'react-player';
 import Divider from '@mui/material/Divider';
@@ -180,15 +180,31 @@ export default function VerticalTabs() {
       </TabPanel>
 
       <TabPanel value={value} index={2}>
+        <div className="wrapper">
           <div className="heading">
-            <h2 className="heading__title">Exam Basic</h2>
-          </div>
-          <div className="content">
-          {/* <CardQuiz/>
-          <CardQuiz/>
-          <CardQuiz/> */}
-            
-          </div>
+              <h2 className="heading__title">Exam Basic</h2>
+            </div>
+            <div className="content">
+            <CardQuiz/>
+            <CardQuiz/>
+            <CardQuiz/>
+    
+            </div>
+        </div>
+          
+          {/* <Grid container spacing={2} alignItems="stretch">
+          <Grid item xs={4} >
+            <CardQuiz/>
+          </Grid>
+          <Grid item xs={4} >
+            <CardQuiz/>
+          </Grid>
+          <Grid item xs={4} >
+            <CardQuiz/>
+          </Grid> */}
+
+         
+          {/* </Grid> */}
       </TabPanel>
      
       </Box>
