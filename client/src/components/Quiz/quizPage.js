@@ -175,6 +175,24 @@ function QuizPage(){
         backgroundBox.classList.add("display-block")
         boxCompleted.classList.add("display-block")
     }
+    const handleSkip = () =>{
+        const trueAnswer = document.querySelector(".trueAnswer").innerText;
+        const Answer = document.getElementById(trueAnswer).innerText;
+        const btnSubmit = document.querySelector(".btn-submit")
+        const btnContinue = document.querySelector(".btn-continue")
+        const background = document.querySelector(".background")
+        const containerBottom = document.querySelector(".qp-container--bottom")
+        const answerFalse = document.querySelector(".answer__false")
+        const btnSkip = document.querySelector(".btn-skip")
+
+        setAnswer(Answer)
+        btnSkip.classList.add("display-none")
+        btnSubmit.classList.toggle("display-none")
+        btnContinue.classList.toggle("display-block")
+        background.classList.toggle("display-block")
+        containerBottom.classList.add("color__false")
+        answerFalse.classList.add("display-block")
+    }
     
     return(
         <div className="fullscreen">
@@ -196,7 +214,7 @@ function QuizPage(){
             </div>
             <div className="qp-container--bottom">
                 <div className="wrapper--left">
-                    <button className="btn-skip">Skip</button>
+                    <button className="btn-skip" onClick = {() => handleSkip()}>Skip</button>
                 </div>
                 <div className="wrapper--center">
                     <div className="answer__false">
