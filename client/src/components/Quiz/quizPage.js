@@ -90,7 +90,8 @@ function QuizPage(){
     }
     // bien flow set cau hien thi ke tiep
     const [flow, setFlow] = useState(0);
-    const [alert, setAlert] = useState();
+    const [answer, setAnswer] = useState();
+    const [count,setCount] = useState(0);
 
     
     const submit = (e)=> {
@@ -100,25 +101,42 @@ function QuizPage(){
         const btnSubmit = document.querySelector(".btn-submit")
         const btnContinue = document.querySelector(".btn-continue")
         const background = document.querySelector(".background")
+        const containerBottom = document.querySelector(".qp-container--bottom")
+        const answerFalse = document.querySelector(".answer__false")
+        const answerTrue = document.querySelector(".answer__true")
+        const btnSkip = document.querySelector(".btn-skip")
+       
         if(!chooseAnswer){
+<<<<<<< HEAD
 
 
 
+=======
+            
+>>>>>>> 56711df277c46b8abeb219487562e39ec215b9d7
         }else{
+            btnSkip.classList.add("display-none")
+            
             var ktra = false;
             if(chooseAnswer.innerText === Answer){
                 ktra = true;
             }
             if(ktra){
-                setAlert("câu trả lời chính xác !")
+                // setAlert("câu trả lời chính xác !")
                 btnSubmit.classList.toggle("display-none")
                 btnContinue.classList.toggle("display-block")
                 background.classList.toggle("display-block")
+                containerBottom.classList.add("color__true")
+                answerTrue.classList.add("display-block")
+                setCount(count + 1);
             }else{
-                setAlert("câu trả lời sai !")
+                setAnswer(Answer)
                 btnSubmit.classList.toggle("display-none")
                 btnContinue.classList.toggle("display-block")
                 background.classList.toggle("display-block")
+                containerBottom.classList.add("color__false")
+                answerFalse.classList.add("display-block")
+                
             }
         }
 
@@ -128,25 +146,75 @@ function QuizPage(){
         const btnContinue = document.querySelector(".btn-continue")
         const btnCompleted = document.querySelector(".btn-completed")
         const background = document.querySelector(".background")
+        const containerBottom = document.querySelector(".qp-container--bottom")
+        const answerFalse = document.querySelector(".answer__false")
+        const answerTrue = document.querySelector(".answer__true")
+        const btnSkip = document.querySelector(".btn-skip")
         
         if((flow + 1) < unitCurrent.length){
             btnContinue.classList.toggle("display-block")
             background.classList.toggle("display-block")
             btnSubmit.classList.toggle("display-none")
+            btnSkip.classList.remove("display-none")
+            
+            //answer
+            answerTrue.classList.remove("display-block")
+            answerFalse.classList.remove("display-block")
+            // containerBottom
+            containerBottom.classList.remove("color__false")
+            containerBottom.classList.remove("color__true")
+            
+            //set cau hỏi tiếp theo
             setFlow(flow + 1);
         }else{
             btnContinue.classList.remove("display-block")
             btnCompleted.classList.add("display-block")
+            //answer
+            answerTrue.classList.remove("display-block")
+            answerFalse.classList.remove("display-block")
+            // containerBottom
+            containerBottom.classList.remove("color__false")
+            containerBottom.classList.remove("color__true")
         }
         
 
     }
+    const handleCompleted = () =>{
+        const backgroundBox = document.querySelector(".background__box")
+        const boxCompleted = document.querySelector(".box__completed")
+        backgroundBox.classList.add("display-block")
+        boxCompleted.classList.add("display-block")
+    }
+    const handleSkip = () =>{
+        const trueAnswer = document.querySelector(".trueAnswer").innerText;
+        const Answer = document.getElementById(trueAnswer).innerText;
+        const btnSubmit = document.querySelector(".btn-submit")
+        const btnContinue = document.querySelector(".btn-continue")
+        const background = document.querySelector(".background")
+        const containerBottom = document.querySelector(".qp-container--bottom")
+        const answerFalse = document.querySelector(".answer__false")
+        const btnSkip = document.querySelector(".btn-skip")
+
+        setAnswer(Answer)
+        btnSkip.classList.add("display-none")
+        btnSubmit.classList.toggle("display-none")
+        btnContinue.classList.toggle("display-block")
+        background.classList.toggle("display-block")
+        containerBottom.classList.add("color__false")
+        answerFalse.classList.add("display-block")
+    }
     
     return(
         <div className="fullscreen">
+<<<<<<< HEAD
             <CssBaseline/>
             <Container className="qp-container--top">
             <div className="qp-content">
+=======
+            <div className="background-image"></div>
+            <div className="background-color"></div>
+            <div className="qp-container--top">
+>>>>>>> 56711df277c46b8abeb219487562e39ec215b9d7
             <AnswerItem
                 key = {unitCurrent[flow].id}
                 question = {unitCurrent[flow].question}
@@ -157,26 +225,44 @@ function QuizPage(){
                 true_answer = {unitCurrent[flow].true_answer}
             ></AnswerItem>
                
+            
+            <div className="background"></div>
             </div>
-            <div className="background">
-                <p>{alert}</p>
-            </div>
-            </Container>
-            {/* <div className="line"></div> */}
             <div className="qp-container--bottom">
-            <div className="qp-buttons">
                 <div className="wrapper--left">
-                    <Button variant="outlined">Skip</Button>
+                    <button className="btn-skip" onClick = {() => handleSkip()}>Skip</button>
                 </div>
                 <div className="wrapper--center">
-
+                    <div className="answer__false">
+                        <h2>Đáp Án Đúng :</h2>
+                        <p className="inner_answer">{answer}</p>
+                    </div>
+                    <div className="answer__true">
+                        <h2>Tuyệt Vời</h2>
+                    </div>
                 </div>
                 <div className="wrapper--right">
                 <button className="btn-continue"  onClick = {() => handleContinue()}>Continue</button>
                 <button className="btn-submit"  onClick = {(e) => submit(e)}>Submit</button>
-                <button className="btn-completed"  >Completed</button>
+                <button className="btn-completed"  onClick = {() => handleCompleted()} >Completed</button>
                 </div>
             </div>
+            <div className="background__box"></div>
+            <div className="box__completed">
+                <div className="box__header">
+                    <h2>Tổng kết</h2>
+                </div>
+                <div className="box__content">
+                    <div className="box__content--text">
+                        <p>Section : {unitCurrent[0].skill}</p>
+                        <p>Level : Normal</p>
+                        <p>Hoàn Thành : {count}/{unitCurrent.length}</p>
+                        <p>Đánh Giá : </p>
+                    </div>
+                </div>
+                <div className="box__btn">
+                   <a className="btn-exit" href="/">Exit</a>
+                </div>
             </div>
         </div>
         
