@@ -1,12 +1,13 @@
 import React from 'react'
-import FacebookIcon from '@material-ui/icons/Facebook';
+  import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import PhoneIcon from '@material-ui/icons/Phone';
 import EmailIcon from '@material-ui/icons/Email';
-import {Container, Grid, Link,Box, BottomNavigation, IconButton, Typography} from '@material-ui/core'
+import {Container, Grid, Box,  Typography} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import InputIcon from '@material-ui/icons/Input';
+import { Link } from 'react-router-dom';
 
 
 export default function PrimaryFoot(){
@@ -14,9 +15,6 @@ export default function PrimaryFoot(){
      const useStyles = makeStyles((theme) => ({
         root: {
           flexGrow: 1,
-          position: 'fixed',
-          bottom: theme.spacing(2),
-        
           
         },
         paper: {
@@ -24,6 +22,10 @@ export default function PrimaryFoot(){
           textAlign: 'center',
           color: theme.palette.text.secondary,
         },
+        link:{
+          textDecoration: 'none',
+          color: '#FFFFFF'
+      }
       }));
       const classes = useStyles();
 
@@ -49,24 +51,26 @@ export default function PrimaryFoot(){
                 </Box>
                 
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={4}  >
                  <Box >
-                <Link href="/" color="inherit"> <InstagramIcon/> Instagram</Link> 
-                </Box>
-                <Box >
-                <Link href="/" color="inherit"> <FacebookIcon/> Facebook</Link>
+                 
+                <Link to="/" className={classes.link} > <InstagramIcon/> Instagram</Link> 
                 </Box>
                 <Box >
                 
-                <Link href="/" color="inherit"> <TwitterIcon/> Twitter</Link>
+                <Link to="/" className={classes.link}>  <FacebookIcon/> Facebook</Link>
+                </Box>
+                <Box >
+               
+                <Link to="/" className={classes.link}>  <TwitterIcon/> Twitter</Link>
                 </Box>
                 <Box >
                 <PhoneIcon/>
-                <Link href="/" color="inherit"> Phone Number : 036999999</Link>
+                <Link to="/" className={classes.link}> Phone Number : 036999999</Link>
                 </Box>
                 <Box >
                 <EmailIcon/>
-                <Link href="/" color="inherit"> Email : 18521458@gm.uit.edu.vn </Link>
+                <Link to="/"  className={classes.link}> Email : 18521458@gm.uit.edu.vn </Link>
                 </Box>
 
         </Grid>
@@ -76,7 +80,7 @@ export default function PrimaryFoot(){
                 <Box > <Typography  >COME BACK</Typography>   </Box>
                 <Box sizeWidth={2} sizeHeight={1}>
                         <button>
-                          <Link href="/"  >
+                          <Link to="/HomeVideo/home/"   color="#0091ea" >
                         <InputIcon fontSize="large"   />
 
                           </Link>

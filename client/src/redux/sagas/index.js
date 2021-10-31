@@ -59,12 +59,94 @@ function* fetchDictionarySaga(action){
  }
 
 
+ function* fetchCommentSaga(action){
+    try {
+ 
+     const comments = yield call(api.ferchComment);
+     yield put(actions.getComments.getCommentsSuccess(comments.data));
+        
+    } catch (error) {
+        console.log(error)
+        yield put(actions.getComments.getCommentsFailure(error))
+        
+    }
+ 
+ 
+ }
+
+
+ function* createCommentSaga(action){
+    try {
+        const comment = yield call(api.createComment, action.payload);
+        yield put(actions.createComments.createCommentsSuccess(comment));
+    } catch (error) {
+        console.log(error)
+        yield put(actions.createComments.createCommentsFailure(error))
+        
+    }
+}
+
+function* deleteCommentSaga(action){
+    try {
+        const comment = yield call(api.deleteComment, action.payload);
+        yield put(actions.deleteComments.deleteCommentsSuccess(comment));
+    } catch (error) {
+        console.log(error)
+        yield put(actions.deleteComments.deleteCommentsFailure(error))
+        
+    }
+}
+
+function* updateCommentSaga(action){
+    try {
+        const comment = yield call(api.updateComment, action.payload);
+        yield put(actions.updateComments.updateCommentsSuccess(comment));
+    } catch (error) {
+        console.log(error)
+        yield put(actions.updateComments.updateCommentsFailure(error))
+        
+    }
+}
+
+function* fetchBlogSaga(action){
+    try {
+ 
+     const blog = yield call(api.fetchBlog);
+     yield put(actions.getBlogs.getBlogsSuccess(blog.data));
+        
+    } catch (error) {
+        console.log(error)
+        yield put(actions.getBlogs.getBlogsFailure(error))   
+    }
+ }
+
+ function* createBlogSaga(action){
+    try {
+        const blog = yield call(api.createBlog, action.payload);
+        yield put(actions.createBlogs.createBlogsSuccess(blog));
+    } catch (error) {
+        console.log(error)
+        yield put(actions.createBlogs.createBlogsFailure(error))
+        
+    }
+}
+
+
 function* mySaga(){
 
 yield takeLatest(actions.getVideos.getVideosRequest, fetchVideoSaga)              
 yield takeLatest(actions.postCustomer.postCustomersRequest,postCustomerSaga )
 yield takeLatest(actions.getLogin.getLoginRequest, getLoginSaga)
 yield takeLatest(actions.getDictionary.getDictionarysRequest, fetchDictionarySaga)              
+yield takeLatest(actions.getComments.getCommentsRequest, fetchCommentSaga)  
+
+yield takeLatest(actions.createComments.createCommentsRequest, createCommentSaga)              
+yield takeLatest(actions.deleteComments.deleteCommentsRequest, deleteCommentSaga)              
+yield takeLatest(actions.updateComments.updateCommentsRequest, updateCommentSaga)  
+
+yield takeLatest(actions.getBlogs.getBlogsRequest, fetchBlogSaga)              
+yield takeLatest(actions.createBlogs.createBlogsRequest, createBlogSaga)              
+
 
 
 //action cuoi dung duoc su li cancle all

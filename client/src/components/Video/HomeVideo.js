@@ -9,6 +9,7 @@ import BodyMain from '../Body/BodyMain';
 
 
 
+
 const useStyle =    makeStyles((theme)=> ({
   
 
@@ -21,8 +22,7 @@ const useStyle =    makeStyles((theme)=> ({
         <CssBaseline/>
         <HearderHome/>
         <BodyList  />
-        
-         <BodyMain />
+        <BodyMain />
          
 
     

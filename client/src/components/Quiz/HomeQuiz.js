@@ -22,6 +22,9 @@ const useStyle =    makeStyles((theme)=> ({
       
       fontFamily: 'Nunito',
 
+  },
+  colos:{
+      backgroundColor: '#e0e0e0',
   }
 
 }));
@@ -50,7 +53,7 @@ const useStyle =    makeStyles((theme)=> ({
     return <div >
         <Hearder/>
 
-       <Container>
+       <Container className={classes.colos}>
        <Grid  className={classes.body} container spacing={3} alignItems="stretch">
 
       
@@ -78,7 +81,7 @@ const useStyle =    makeStyles((theme)=> ({
         }
         </Grid>
 
-        <Grid item xs={12}  sm={3}>
+        <Grid item xs={12}  sm={3} >
         <Looks3Icon className={classes.icon}/>
         {
             unit3.map(unit =>(

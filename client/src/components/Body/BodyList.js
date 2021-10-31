@@ -100,7 +100,7 @@ export default function BodyList() {
           </ListItem>
           </Link>
 
-          <Link to=""  className={classes.link}>
+          <Link to={"/Blog"}  className={classes.link}>
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>

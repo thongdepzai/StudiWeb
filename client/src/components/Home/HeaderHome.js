@@ -86,6 +86,7 @@ const useStyle =    makeStyles((theme)=> ({
 
      const deleteLocal = () =>{
         localStorage.removeItem("id",undefined)
+        localStorage.removeItem("name",undefined)
         history.push("/") //redirect react hooks
       }
 
@@ -137,7 +138,8 @@ const useStyle =    makeStyles((theme)=> ({
 
                 
             </Toolbar>
-            <Divider/>
+        <Divider/>
+
         </AppBar>
 
     </div>

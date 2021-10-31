@@ -11,8 +11,13 @@ import {useHistory } from 'react-router-dom'
 
 
 const useStyle =    makeStyles((theme)=> ({
+  root:{
+    minHeight: '100vh',
+    backgroundImage: `url("https://images.pexels.com/photos/64779/pexels-photo-64779.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")`,
+    backgroundRepeat: 'repeat',
+    backgroundSize: 'cover',
+    },
     paper: {
-        marginTop: theme.spacing(1),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -76,7 +81,7 @@ function Copyright() {
 
 
 },[data,dispatch])
-    return ( <div>
+    return ( <div className={classes.root}>
   
   <Container component="main" maxWidth="xs">
     <CssBaseline />

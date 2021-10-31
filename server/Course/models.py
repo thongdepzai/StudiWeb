@@ -36,21 +36,23 @@ class StudiVideo(models.Model):
         return self.Title
 
 class Blog(models.Model):
-    Filepost = models.FileField()
-    Title = models.CharField(max_length=500)
+    Filepost = models.CharField(max_length=500)
+    Title = models.CharField(max_length=5000)
     Content = models.CharField(max_length=500)
 
     def __str__(self):
         return self.Title
 
 class Comment(models.Model):
-    id_User = models.CharField(max_length=500)
-    id_Blog = models.CharField(max_length=500)
-    Content = models.CharField(max_length=500)
-
-    
+    userId = models.CharField(max_length=500)
+    username = models.CharField(max_length=500)
+    blogId = models.CharField(max_length=500)
+    body = models.CharField(max_length=1000)
+    parentId = models.CharField(max_length=500)
+    createdAt = models.CharField(max_length=300)
+ 
     def __str__(self):
-        return self.id_Blog
+        return self.username
 
 class Customer(models.Model):
     Name = models.CharField(max_length=500)

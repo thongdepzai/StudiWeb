@@ -11,4 +11,15 @@ export const INIT_STATE = {
         isLoading:false,
         data: [],
     },
+    modal:{
+        isShow:false,
+    },
+    comments:{
+        isLoading:false,
+        data: [],
+    },
+    blogs:{
+        isLoading:false,
+        data: [],
+    },
 }

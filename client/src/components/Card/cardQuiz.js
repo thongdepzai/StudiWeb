@@ -7,15 +7,6 @@ import unit1 from '../../image/unit1.jpg'
 
 export default function CardQuiz(props){
     return(
-        // <Grid item xs={12}  sm={3} className="grid">
-        //     <div className="content__item">
-        //     <a href="/quiz-page"><img src={props.url} alt="abc" className="content__item--img" /></a>
-        //     <a href="/quiz-page">{props.title}</a>
-        //     <div className="content__item--button">
-        //         <a href="/quiz-page"><button className="button--quiz">Go Now!</button></a>
-        //     </div>
-        //     </div>
-        // </Grid>
         <div className="item__unit">
             <div className="item__image">
                 

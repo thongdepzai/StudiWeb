@@ -11,8 +11,14 @@ import {useHistory } from 'react-router-dom'
 
 
 const useStyle =    makeStyles((theme)=> ({
+
+  root:{
+    minHeight: '100vh',
+    backgroundImage: `url("https://images.pexels.com/photos/2736499/pexels-photo-2736499.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")`,
+    backgroundRepeat: 'repeat',
+    backgroundSize: 'cover',
+    },
     paper: {
-        marginTop: theme.spacing(5),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -91,6 +97,7 @@ function Copyright() {
        if(checkLogin != undefined  && checkLogin != null){
 
         localStorage.setItem('id',checkLogin.id)
+        localStorage.setItem('name',checkLogin.Name)
         console.log("login ")
         history.push("/") //redirect react hooks
 
@@ -104,7 +111,7 @@ function Copyright() {
 
      
 
-    return <div >
+    return <div  className={classes.root}>
      <Container component="main" maxWidth="xs" >
       <CssBaseline />
       <div className={classes.paper}>

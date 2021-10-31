@@ -27,10 +27,12 @@ const useStyle =    makeStyles((theme)=> ({
      
 
     const {Themes} =useParams();
-     const dispatch = useDispatch();
-     const videos =useSelector(videoState$);
+    const dispatch = useDispatch();
+    const videos =useSelector(videoState$);
+
      React.useEffect(()=>{
         dispatch(actions.getVideos.getVideosRequest())
+
      },[dispatch]);
 
 

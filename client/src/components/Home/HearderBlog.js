@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import {makeStyles} from '@material-ui/core/styles'
 import { AppBar, Button, Collapse, IconButton,   Toolbar } from '@material-ui/core';
 import SortIcon from '@material-ui/icons/Sort';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import {  Link  as Scroll} from 'react-scroll'
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
@@ -15,7 +13,7 @@ const useStyle =    makeStyles((theme)=> ({
         display:"flex",
         justifyContent: 'center',
         alignItems: 'center',
-        height:'100vh',
+        height:'400px',
         fontFamily: 'Nunito',
 
     },
@@ -131,22 +129,7 @@ const useStyle =    makeStyles((theme)=> ({
             </Toolbar>
         </AppBar>
 
-        <Collapse in={checked} 
-                  {...(checked  ? { timeout: 2000 } : {})}
-                  collapsedHeight={50}
-                  >
-        <div className={classes.container}>
-            <h1 className={classes.title}>
-                Welcome to <br/>  
-                <span className={classes.colorText}>  MYSTUDY</span>.
-            </h1>
-            <Scroll to="select-Study" smooth={true}>
-            <IconButton>
-                <KeyboardArrowDownIcon className={classes.goDown}/>
-            </IconButton>
-            </Scroll>
-        </div>
-        </Collapse>
+       
 
 
     </div>
@@ -203,23 +186,7 @@ const useStyle =    makeStyles((theme)=> ({
             </Toolbar>
         </AppBar>
 
-        <Collapse in={checked} 
-                  {...(checked  ? { timeout: 2000 } : {})}
-                  collapsedHeight={50}
-                  >
-        <div className={classes.container}>
-            <h1 className={classes.title}>
-                Welcome to <br/>  
-                <span className={classes.colorText}>  MYSTUDY</span>.
-            </h1>
-            <Scroll to="select-Study" smooth={true}>
-            <IconButton>
-                <KeyboardArrowDownIcon className={classes.goDown}/>
-            </IconButton>
-            </Scroll>
-        </div>
-        </Collapse>
-
+        
 
     </div>
     )

@@ -25,6 +25,8 @@ from Views.QuizViews import GetAllQuiz
 from Views.StudiVideoViews import GetAllStudiVideo
 from Views.DictionaryViews import GetAllDictionarry
 from Views.CustomerViews import SigupView, SiginView
+from Views.CommentViews import GetAllComment, UpdateComment, DeleteComment, CreateComment
+from Views.BlogViews import GetAllBlog
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,4 +35,9 @@ urlpatterns = [
     path('dictionary/', GetAllDictionarry.as_view()),
     path('Sigup/', SigupView.as_view()),
     path('Sigin/', SiginView.as_view()),
+    path('Blog/', GetAllBlog.as_view()),
+    path('Comment/', GetAllComment.as_view()),
+    path('Comment/update', UpdateComment.as_view()),
+    path('Comment/delete', DeleteComment.as_view()),
+    path('Comment/create', CreateComment.as_view()),
 ]

@@ -28,6 +28,7 @@ export default function AnswerItem (props) {
             </div>
             <div className="qp-content__answer">
             <div className="trueAnswer">{props.true_answer}</div>
+            <div className="key">{props.key}</div>
             <Grid container>
                 <Grid item xs={6}>
                     <button className="qp-button__answer" id="answer_1" onClick={(e)=> chooseAnswer(e)} >{props.answer_1} </button>
