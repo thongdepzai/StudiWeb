@@ -107,13 +107,6 @@ function QuizPage(){
         const btnSkip = document.querySelector(".btn-skip")
        
         if(!chooseAnswer){
-<<<<<<< HEAD
-
-
-
-=======
-            
->>>>>>> 56711df277c46b8abeb219487562e39ec215b9d7
         }else{
             btnSkip.classList.add("display-none")
             
@@ -206,15 +199,10 @@ function QuizPage(){
     
     return(
         <div className="fullscreen">
-<<<<<<< HEAD
-            <CssBaseline/>
-            <Container className="qp-container--top">
-            <div className="qp-content">
-=======
+
             <div className="background-image"></div>
             <div className="background-color"></div>
             <div className="qp-container--top">
->>>>>>> 56711df277c46b8abeb219487562e39ec215b9d7
             <AnswerItem
                 key = {unitCurrent[flow].id}
                 question = {unitCurrent[flow].question}

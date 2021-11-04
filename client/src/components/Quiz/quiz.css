@@ -1,8 +1,8 @@
-body {
+/* body {
     overflow: hidden;
     margin: 0;
     padding: 0;
-}
+} */
 
 .wrapper {
     width: 1280px;
@@ -80,7 +80,6 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
 }

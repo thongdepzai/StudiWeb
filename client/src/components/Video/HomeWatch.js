@@ -12,6 +12,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import * as actions from '../../redux/actions'
 import {videoState$} from '../../redux/selector'
 
+import SearchVideo from './SearchVideo';
 
 
 const useStyle =    makeStyles((theme)=> ({
@@ -40,6 +41,7 @@ const useStyle =    makeStyles((theme)=> ({
     },[dispatch]);
      const classes =useStyle();
     return <div >
+        <SearchVideo/>
         <CssBaseline/>
         <HearderHome/>
         <BodyListCard />
