@@ -16,6 +16,8 @@ import QuizPage from './components/Quiz/QuizPage'
 import HomeBlog from './components/Blog/HomeBlog'
 import DetailBlog from './components/Blog/DetailBlog'
 
+import MainPage from './components/HomeCourse/MainPage'
+
 export default function Routers(){
     return(
         <div>
@@ -34,6 +36,7 @@ export default function Routers(){
                 <Route exact path="/Blog/"  component={HomeBlog}/>
                 <Route exact path="/Detail/:id"  component={DetailBlog}/>
 
+                <Route exact path="/home-course"  component={MainPage}/>
 
                 <Route component={Home} />
 
