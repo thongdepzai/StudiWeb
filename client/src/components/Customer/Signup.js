@@ -13,7 +13,7 @@ import {useHistory } from 'react-router-dom'
 const useStyle =    makeStyles((theme)=> ({
   root:{
     minHeight: '100vh',
-    backgroundImage: `url("https://images.pexels.com/photos/64779/pexels-photo-64779.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")`,
+    backgroundImage: `url("https://images.pexels.com/photos/1007025/pexels-photo-1007025.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")`,
     backgroundRepeat: 'repeat',
     backgroundSize: 'cover',
     },
@@ -28,6 +28,7 @@ const useStyle =    makeStyles((theme)=> ({
       form: {
         width: '100%', // Fix IE 11 issue.
         marginTop: theme.spacing(1),
+        color: 'black !important',
       },
       submit: {
         margin: theme.spacing(3, 0, 2),

@@ -7,9 +7,6 @@
 // createdAt: "2021-08-16T23:00:33.010+02:00",
 
 
-
-
-
 export  const CreateComment = async (text, parentId = 'null') => {
  const name = localStorage.getItem('name')
  const id = localStorage.getItem('id')

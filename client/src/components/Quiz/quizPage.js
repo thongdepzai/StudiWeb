@@ -1,16 +1,14 @@
 import React from 'react'
-import {Checkbox, Container} from '@mui/material'
 import { styled } from '@mui/material/styles';
-import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
-import Stack from '@mui/material/Stack';
 import './quiz.css';
 import AnswerItem from '../Card/AnswerItem';
 import { useState } from 'react';
-import { display } from '@mui/system';
-import { CssBaseline } from '@material-ui/core';
+import { useParams } from 'react-router';
+
+import {useDispatch,useSelector} from 'react-redux'
+import * as actions from '../../redux/actions'
+import {quiz$} from '../../redux/selector'
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -77,10 +75,17 @@ const Unit = [
 
 
 function QuizPage(){
+
+    const {skill} = useParams()
     // get element
    
+    const dispatch = useDispatch()
+    const units = useSelector(quiz$)
     
-    
+    React.useEffect(()=>{
+        dispatch(actions.getQuizs.getQuizsRequest())
+    },[dispatch])
+
     // lay unit hien tai
     const unitCurrent = [];
         for(const unit of Unit){
@@ -88,6 +93,16 @@ function QuizPage(){
                 unitCurrent.push(unit)
         }
     }
+
+
+
+    // const unitCurrent = [];
+    //     for(const unit of units){
+    //         if(unit.Skill == skill){
+    //             unitCurrent.push(unit)
+    //     }
+    // }
+
     // bien flow set cau hien thi ke tiep
     const [flow, setFlow] = useState(0);
     const [answer, setAnswer] = useState();
@@ -107,13 +122,7 @@ function QuizPage(){
         const btnSkip = document.querySelector(".btn-skip")
        
         if(!chooseAnswer){
-<<<<<<< HEAD
 
-
-
-=======
-            
->>>>>>> 56711df277c46b8abeb219487562e39ec215b9d7
         }else{
             btnSkip.classList.add("display-none")
             
@@ -176,8 +185,6 @@ function QuizPage(){
             containerBottom.classList.remove("color__false")
             containerBottom.classList.remove("color__true")
         }
-        
-
     }
     const handleCompleted = () =>{
         const backgroundBox = document.querySelector(".background__box")
@@ -202,19 +209,22 @@ function QuizPage(){
         background.classList.toggle("display-block")
         containerBottom.classList.add("color__false")
         answerFalse.classList.add("display-block")
-    }
-    
+    } 
     return(
+
+        
+
         <div className="fullscreen">
-<<<<<<< HEAD
-            <CssBaseline/>
-            <Container className="qp-container--top">
-            <div className="qp-content">
-=======
+
+
+
+
             <div className="background-image"></div>
             <div className="background-color"></div>
             <div className="qp-container--top">
->>>>>>> 56711df277c46b8abeb219487562e39ec215b9d7
+
+
+
             <AnswerItem
                 key = {unitCurrent[flow].id}
                 question = {unitCurrent[flow].question}
@@ -224,8 +234,40 @@ function QuizPage(){
                 answer_4 = {unitCurrent[flow].answer_4}
                 true_answer = {unitCurrent[flow].true_answer}
             ></AnswerItem>
-               
-            
+
+                {/* {units.map((unit)=>{
+                    console.log(units.length)
+                    if(unit.Skill===skill){
+
+                        return(
+                            <AnswerItem
+                                key = {unit.id}
+                                question = {unit.Question}
+                                answer_1 = {unit.A}
+                                answer_2 = {unit.B}
+                                answer_3 = {unit.C}
+                                answer_4 = {unit.D}
+                                true_answer = {unit.Answer}
+                                ></AnswerItem>  
+                        )
+                    }
+                })} */}
+
+                        {/* <AnswerItem
+                        key = {unitCurrent[flow].id}
+                        question = {unitCurrent[flow].Question}
+                        answer_1 = {unitCurrent[flow].A}
+                        answer_2 = {unitCurrent[flow].B}
+                        answer_3 = {unitCurrent[flow].C}
+                        answer_4 = {unitCurrent[flow].D}
+                        true_answer = {unitCurrent[flow].Answer}
+                        ></AnswerItem>  */}
+                       
+           
+                       
+                               
+                                
+                                
             <div className="background"></div>
             </div>
             <div className="qp-container--bottom">
@@ -249,6 +291,7 @@ function QuizPage(){
             </div>
             <div className="background__box"></div>
             <div className="box__completed">
+
                 <div className="box__header">
                     <h2>Tổng kết</h2>
                 </div>
@@ -263,6 +306,7 @@ function QuizPage(){
                 <div className="box__btn">
                    <a className="btn-exit" href="/">Exit</a>
                 </div>
+
             </div>
         </div>
         

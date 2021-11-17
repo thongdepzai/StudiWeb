@@ -15,13 +15,22 @@ import { blog$ } from '../../redux/selector'
 
 import { useParams } from 'react-router-dom';
 
+import './Blog.css';
+
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/Inbox';
+import DraftsIcon from '@mui/icons-material/Drafts';
+
 
 const useStyle = makeStyles((theme) => ({
 
 
     image: {
-
-        height: '400px',
+        height: '300px',
         backgroundImage: `url("https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")`,
         backgroundRepeat: 'round',
         backgroundSize: 'cover',
@@ -38,22 +47,22 @@ const useStyle = makeStyles((theme) => ({
         borderColor:'#DDDDDD',
     },
 
-    images: {
-        display: 'block',
-        height: 'auto',
-        width: '800px',
-        marginLeft: '30px',
-        marginRight: '30px',
-        padding: '20px',
+    // images: {
+    //     display: 'block',
+    //     height: 'auto',
+    //     width: '800px',
+    //     marginLeft: '30px',
+    //     marginRight: '30px',
+    //     padding: '20px',
 
-    },
-    center: {
-        margin: 'auto',
-        width: '800px',
-    },
-    text: {
-        height: 'auto',
-    },
+    // },
+    // center: {
+    //     margin: 'auto',
+    //     width: '800px',
+    // },
+    // text: {
+    //     height: 'auto',
+    // },
 
 
 }));
@@ -78,13 +87,14 @@ export default function DetailBlog() {
 
     const classes = useStyle();
     return (
-
         <div className={classes.image}>
-            <CssBaseline />
-            <HeaderBlog />
-            <div className={classes.body}>
-                <div className={classes.center}>
-                    <CardHeader
+        <CssBaseline />
+        <HeaderBlog />
+        <div className="blog">
+        
+            <div className="blog__content">
+                <div className="blog__content--header">
+                <CardHeader
                         avatar={
                             <Avatar aria-label="recipe">
                                 R
@@ -98,10 +108,9 @@ export default function DetailBlog() {
                         title="Shrimp and Chorizo Paella"
                         subheader="September 14, 2016"
                     />
-
-
-
-                    {
+                </div>
+                <div className="blog__content--box">
+                {
                         blogs.map((blog) => {
 
                             if (blog.id==id) {
@@ -109,25 +118,25 @@ export default function DetailBlog() {
                                     <div>
                                          <Modalss key={blog.id} blog={blog} /> 
 
-                                        <div className={classes.images} >
+                                       
 
-                                            <div className="title-text">
-                                                <Typography >
+                                            <div className="title--text">
+                                                <h2 >
                                                     {blog.Title}
-                                                </Typography>
+                                                </h2>
 
                                             </div>
                                                                                            
                                                 <img 
-                                                height= '700px'
-                                                width= '700px'
+                                                className="content--img"
                                                 onClick={openModal}                                                    
                                                 src={blog.Filepost} />
 
-                                            <Typography className="title-text">
+                                            <Typography className="content--text">
                                                 {blog.Content}
+                                                
                                             </Typography>
-                                        </div>
+                                        
                                         
 
                                     </div>
@@ -140,8 +149,115 @@ export default function DetailBlog() {
                         })}
                 </div>
             </div>
-            <Footer/>
+            <div className="blog__sidebar">
+            <div className="blog__sidebar--header">
+                <div className="header--box">
+                <h3 >Recent Post</h3> 
+                </div>
+                
+            </div>
+            <div className="blog__sidebar--item">
+                    <div className="item--img">
+                    <img className="sidebar--img" src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAcA4gFdnECzkrIXP_8sFtOpLkNR4Pzj6mQsnPw-UO1p1ieeLFaHWDOAQlNSsOq_g0nYU&usqp=CAU"/>
+                    </div>
+                    <div className="item--title">
+                        <h3>Title của blog mới tạo</h3>
+                    </div>
+            </div>
+            <div className="blog__sidebar--item">
+                    <div className="item--img">
+                    <img className="sidebar--img" src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAcA4gFdnECzkrIXP_8sFtOpLkNR4Pzj6mQsnPw-UO1p1ieeLFaHWDOAQlNSsOq_g0nYU&usqp=CAU"/>
+                    </div>
+                    <div className="item--title">
+                        <h3>Title của blog mới tạo</h3>
+                    </div>
+            </div>
+            <div className="blog__sidebar--item">
+                    <div className="item--img">
+                    <img className="sidebar--img" src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAcA4gFdnECzkrIXP_8sFtOpLkNR4Pzj6mQsnPw-UO1p1ieeLFaHWDOAQlNSsOq_g0nYU&usqp=CAU"/>
+                    </div>
+                    <div className="item--title">
+                        <h3>Title của blog mới tạo</h3>
+                    </div>
+            </div>
+            <div className="blog__sidebar--item">
+                    <div className="item--img">
+                    <img className="sidebar--img" src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAcA4gFdnECzkrIXP_8sFtOpLkNR4Pzj6mQsnPw-UO1p1ieeLFaHWDOAQlNSsOq_g0nYU&usqp=CAU"/>
+                    </div>
+                    <div className="item--title">
+                        <h3>Title của blog mới tạo</h3>
+                    </div>
+            </div>
+            </div>
+            
         </div>
+        <Footer/>
+        </div>
+
+
+        // <div className={classes.image}>
+        //     <CssBaseline />
+        //     <HeaderBlog />
+        //     <div className={classes.body}>
+        //         <div className={classes.center}>
+        //             <CardHeader
+        //                 avatar={
+        //                     <Avatar aria-label="recipe">
+        //                         R
+        //                     </Avatar>
+        //                 }
+        //                 action={
+        //                     <IconButton aria-label="settings">
+        //                         <MoreVertIcon/>
+        //                     </IconButton>
+        //                 }
+        //                 title="Shrimp and Chorizo Paella"
+        //                 subheader="September 14, 2016"
+        //             />
+
+
+
+        //             {
+        //                 blogs.map((blog) => {
+
+        //                     if (blog.id==id) {
+        //                         return (
+        //                             <div>
+        //                                  <Modalss key={blog.id} blog={blog} /> 
+
+        //                                 <div className={classes.images} >
+
+        //                                     <div className="title-text">
+        //                                         <Typography >
+        //                                             {blog.Title}
+        //                                         </Typography>
+
+        //                                     </div>
+                                                                                           
+        //                                         <img 
+        //                                         height= '700px'
+        //                                         width= '700px'
+        //                                         onClick={openModal}                                                    
+        //                                         src={blog.Filepost} />
+
+        //                                     <Typography className="title-text">
+        //                                         {blog.Content}
+        //                                     </Typography>
+        //                                 </div>
+                                        
+
+        //                             </div>
+
+
+        //                         )
+
+
+        //                     }
+        //                 })}
+        //         </div>
+        //     </div>
+        //     <Footer/>
+        // </div>
     )
 
 

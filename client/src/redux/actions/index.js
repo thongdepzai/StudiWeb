@@ -2,14 +2,13 @@ import {createActions, createAction} from 'redux-actions'
 
 export const getType = (reduxAction) =>{
     return reduxAction().type;
-}
-
+};
 
 export const getVideos = createActions({
 
     getVideosRequest: undefined,
     getVideosSuccess: (payload) => payload,
-    getVideosFailure: (err) => err
+    getVideosFailure: (err) => err,
 });
 
 
@@ -69,6 +68,13 @@ export const getBlogs = createActions({
     getBlogsRequest: undefined,
     getBlogsSuccess: (payload) => payload,
     getBlogsFailure: (err) => err
+});
+
+export const getQuizs = createActions({
+
+    getQuizsRequest: undefined,
+    getQuizsSuccess: (payload) => payload,
+    getQuizsFailure: (err) => err
 });
 
 

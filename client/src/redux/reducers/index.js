@@ -5,6 +5,7 @@ import dictionarys from './dictionarys'
 import modal from './modal'
 import comments from './comments'
 import blogs from './blogs'
+import quizs from './quizs'
 
 export default combineReducers({
 
@@ -14,5 +15,6 @@ dictionarys,
 modal,
 comments,
 blogs,
+quizs,
 
 });

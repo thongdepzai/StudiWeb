@@ -29,7 +29,11 @@ const useStyle =    makeStyles((theme)=> ({
     return <div className={classes.image}>
         <CssBaseline/>
         <HeaderBlog/>
+
+        
         <BodyBlog/>
+
+        
         <Footer/>
          
 

@@ -22,12 +22,9 @@ const useStyle =    makeStyles((theme)=> ({
 export default function CardBlog({blog}) {
 
   const classes =useStyle();
-  
 
-   
-    
   return (
-    <Card sx={{ maxWidth: 345 }} >
+    <Card sx={{ maxWidth: 345, height:365, }} >
       <CardActionArea>
         <Link className={classes.link} to={"/Detail/"+blog.id}>
         <CardMedia 
@@ -40,7 +37,7 @@ export default function CardBlog({blog}) {
             {blog.Title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          {blog.Content}
+          {blog.Summary}
           </Typography>
         </CardContent>
         </Link>

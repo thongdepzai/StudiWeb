@@ -13,7 +13,7 @@ const useStyle =    makeStyles((theme)=> ({
         display:"flex",
         justifyContent: 'center',
         alignItems: 'center',
-        height:'400px',
+        height:'300px',
         fontFamily: 'Nunito',
 
     },

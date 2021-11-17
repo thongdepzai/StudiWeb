@@ -9,3 +9,7 @@ export const modalState$ = (state) => state.modal;
 export const comment$ = (state) => state.comments.data;
 
 export const blog$ = (state) => state.blogs.data;
+
+export const quiz$ = (state) => state.quizs.data;
+
+

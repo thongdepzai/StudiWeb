@@ -38,7 +38,9 @@ class StudiVideo(models.Model):
 class Blog(models.Model):
     Filepost = models.CharField(max_length=500)
     Title = models.CharField(max_length=5000)
-    Content = models.CharField(max_length=500)
+    Content = models.CharField(max_length=10000)
+    Summary = models.CharField(max_length=500)
+
 
     def __str__(self):
         return self.Title

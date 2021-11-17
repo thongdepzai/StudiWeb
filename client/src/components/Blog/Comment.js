@@ -3,7 +3,12 @@ import React from 'react';
 import './comment.css'
 import Avatar from '@mui/material/Avatar';
 
+
+
 const Comment = ({
+  
+
+  
   comment,
   replies,
   setActiveComment,
