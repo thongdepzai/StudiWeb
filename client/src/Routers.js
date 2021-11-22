@@ -15,10 +15,11 @@ import StudyUnit from './components/Quiz/StudyUnit'
 import QuizPage from './components/Quiz/QuizPage'
 import HomeBlog from './components/Blog/HomeBlog'
 import DetailBlog from './components/Blog/DetailBlog'
-
+//course 
 import MainPage from './components/HomeCourse/MainPage'
-
 import Checkout from './components/HomeCourse/Checkout'
+import DetailCourse from './components/HomeCourse/DetailCourse'
+
 
 export default function Routers(){
     return(
@@ -37,10 +38,10 @@ export default function Routers(){
                 <Route exact path="/quiz-page/"  component={QuizPage}/>
                 <Route exact path="/Blog/"  component={HomeBlog}/>
                 <Route exact path="/Detail/:id"  component={DetailBlog}/>
-
+                {/* course */}
                 <Route exact path="/home-course"  component={MainPage}/>
-
                 <Route exact path="/checkout"  component={Checkout}/>
+                <Route exact path="/detail-course"  component={DetailCourse}/>
 
                 <Route component={Home} />
 

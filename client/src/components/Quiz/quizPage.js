@@ -83,11 +83,17 @@ function QuizPage(){
     
     // lay unit hien tai
     const unitCurrent = [];
-        for(const unit of Unit){
-            if(unit.skill == "unit1"){
-                unitCurrent.push(unit)
+    Unit.map(unit=>{
+        if(unit.skill == "unit1"){
+            unitCurrent.push(unit);
         }
-    }
+    })
+    console.log(unitCurrent)
+    //     for(const unit of Unit){
+    //         if(unit.skill == "unit1"){
+    //             unitCurrent.push(unit)
+    //     }
+    // }
     // bien flow set cau hien thi ke tiep
     const [flow, setFlow] = useState(0);
     const [answer, setAnswer] = useState();
@@ -97,6 +103,7 @@ function QuizPage(){
     const submit = (e)=> {
         const trueAnswer = document.querySelector(".trueAnswer").innerText;
         const Answer = document.getElementById(trueAnswer).innerText;
+        console.log(Answer)
         const chooseAnswer = document.querySelector(".qp-active")
         const btnSubmit = document.querySelector(".btn-submit")
         const btnContinue = document.querySelector(".btn-continue")
@@ -181,6 +188,7 @@ function QuizPage(){
     const handleSkip = () =>{
         const trueAnswer = document.querySelector(".trueAnswer").innerText;
         const Answer = document.getElementById(trueAnswer).innerText;
+
         const btnSubmit = document.querySelector(".btn-submit")
         const btnContinue = document.querySelector(".btn-continue")
         const background = document.querySelector(".background")
