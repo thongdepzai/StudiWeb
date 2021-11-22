@@ -89,7 +89,9 @@ export default function DetailCourse(){
                             <strong>&#36; 99.00</strong>
                         </div>
                         <div className='text-success'><AccessTimeIcon/> Thời gian ưu đãi còn 12 ngày</div>
-                    <PayPal/>
+                    <PayPal
+                    price = {99}
+                    ></PayPal>
                     </div>
                     
                 </div>
