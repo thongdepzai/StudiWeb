@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import './course.css'
 
 
 export default function PayPal(props){
@@ -46,7 +47,8 @@ export default function PayPal(props){
 
     return(
         <div>
-            <div ref={paypal}></div>
+            <div className="paypal-success" id="paypal-button-container" ref={paypal}></div>
+
         </div>
     )
 }

@@ -401,3 +401,8 @@ html {
     text-decoration: none;
     color: black;
 }
+
+.paypal-success {
+    font-size: 2rem;
+    color: green;
+}
