@@ -77,6 +77,13 @@ export const getQuizs = createActions({
     getQuizsFailure: (err) => err
 });
 
+export const getMyCourse = createActions({
+    getMyCoursesRequest: undefined,
+    getMyCoursesSuccess: (payload) => payload,
+    getMyCoursesFailure: (err) => err
+
+});
+
 
 
 export const showModal = createAction('SHOW_MODAL')

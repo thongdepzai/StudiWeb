@@ -26,4 +26,8 @@ export const INIT_STATE = {
         isLoading:false,
         data: [],
     },
+    mycourses:{
+        isLoading:false,
+        data: [],
+    },
 }

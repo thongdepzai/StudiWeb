@@ -1,7 +1,6 @@
-import {takeLatest , call, put } from "redux-saga/effects"
+import {takeLatest , call, put,take,takeEvery } from "redux-saga/effects"
 import * as actions from '../actions'
 import * as api from '../../api'
-import { quiz$ } from "../selector";
 
 function* fetchVideoSaga(action){
    try {
@@ -146,6 +145,20 @@ function* fetchQuizSaga(action){
  }
 
 
+ function* fetchMyCourseSaga(action){
+    try {
+ 
+     const mycourses = yield call(api.fetchMyCourse);
+     console.log('[quiz]',mycourses)
+     yield put(actions.getMyCourse.getMyCoursesSuccess(mycourses.data));
+        
+    } catch (error) {
+        console.log(error)
+        yield put(actions.getMyCourse.getMyCoursesFailure(error))   
+    }
+ }
+
+
 
 
 function* mySaga(){
@@ -163,6 +176,7 @@ yield takeLatest(actions.updateComments.updateCommentsRequest, updateCommentSaga
 yield takeLatest(actions.getBlogs.getBlogsRequest, fetchBlogSaga)              
 yield takeLatest(actions.createBlogs.createBlogsRequest, createBlogSaga)      
 yield takeLatest(actions.getQuizs.getQuizsRequest, fetchQuizSaga)              
+yield takeLatest(actions.getMyCourse.getMyCoursesRequest, fetchMyCourseSaga)              
 
 
 

@@ -16,6 +16,10 @@ import QuizPage from './components/Quiz/quizPage'
 import HomeBlog from './components/Blog/HomeBlog'
 import DetailBlog from './components/Blog/DetailBlog'
 
+import MainPage from './components/HomeCourse/MainPage'
+
+import Checkout from './components/HomeCourse/Checkout'
+
 export default function Routers(){
     return(
         <div>
@@ -34,6 +38,9 @@ export default function Routers(){
                 <Route exact path="/Blog/"  component={HomeBlog}/>
                 <Route exact path="/Detail/:id"  component={DetailBlog}/>
 
+                <Route exact path="/home-course"  component={MainPage}/>
+
+                <Route exact path="/checkout"  component={Checkout}/>
 
                 <Route component={Home} />
 

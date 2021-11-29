@@ -1,21 +1,21 @@
 import { INIT_STATE } from "../../constants";
-import { getType, getQuizs } from "../actions";
+import { getType, getMyCourse } from "../actions";
 
 
-export default function quizsReducers(state=INIT_STATE.quizs, action){
+export default function mycoursesReducers(state=INIT_STATE.mycourses, action){
     switch(action.type){
-        case getType(getQuizs.getQuizsRequest):
+        case getType(getMyCourse.getMyCoursesRequest):
             return{
                 ...state,
                 isLoading: true,
             }
-        case getType(getQuizs.getQuizsSuccess):
+        case getType(getMyCourse.getMyCoursesSuccess):
             return{
                 ...state,
                 isLoading: false,
                 data: action.payload
             }
-        case getType(getQuizs.getQuizsFailure):
+        case getType(getMyCourse.getMyCoursesFailure):
             return{
                 ...state,
                 isLoading: false,

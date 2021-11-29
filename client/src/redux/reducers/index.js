@@ -6,6 +6,7 @@ import modal from './modal'
 import comments from './comments'
 import blogs from './blogs'
 import quizs from './quizs'
+import mycourses from './mycourses'
 
 export default combineReducers({
 
@@ -16,5 +17,6 @@ modal,
 comments,
 blogs,
 quizs,
+mycourses,
 
 });

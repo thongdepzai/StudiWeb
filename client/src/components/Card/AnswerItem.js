@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+
 import { Grid } from '@material-ui/core';
 import '../Quiz/quiz.css';
 
@@ -31,16 +31,16 @@ export default function AnswerItem (props) {
             <div className="key">{props.key}</div>
             <Grid container className="qp__answer--item">
                 <Grid item xs={6}>
-                    <button className="qp-button__answer" id="answer_1" onClick={(e)=> chooseAnswer(e)} >{props.answer_1} </button>
+                    <button className="qp-button__answer" id="A" onClick={(e)=> chooseAnswer(e)} >{props.answer_1} </button>
                 </Grid>
                 <Grid item xs={6}>
-                    <button className="qp-button__answer " id="answer_2" onClick={(e)=> chooseAnswer(e)} >{props.answer_2}</button>
+                    <button className="qp-button__answer " id="B" onClick={(e)=> chooseAnswer(e)} >{props.answer_2}</button>
                 </Grid>
                 <Grid item xs={6}>
-                    <button className="qp-button__answer " id="answer_3" onClick={(e)=> chooseAnswer(e)} >{props.answer_3}</button>
+                    <button className="qp-button__answer " id="C" onClick={(e)=> chooseAnswer(e)} >{props.answer_3}</button>
                 </Grid>
                 <Grid item xs={6}>
-                    <button className="qp-button__answer" id="answer_4" onClick={(e)=> chooseAnswer(e)} >{props.answer_4}</button>
+                    <button className="qp-button__answer" id="D" onClick={(e)=> chooseAnswer(e)} >{props.answer_4}</button>
                 </Grid>
             </Grid>
         </div>

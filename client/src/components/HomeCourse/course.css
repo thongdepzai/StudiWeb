@@ -1,0 +1,412 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+/* main */
+
+.course-container {
+    width: 100%;
+    display: flex;
+}
+
+.course-side {
+    position: relative;
+    width: 15%;
+    height: 100vh;
+}
+
+.course-content {
+    width: 85%;
+}
+
+
+/* course-sidebar > css */
+
+.course-sidebar {
+    position: fixed;
+    width: 15%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    color: #eaecee;
+    background-color: #343a40;
+    overflow-y: auto;
+}
+
+.content-header--item {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.content-user {
+    background-color: #2d3238;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.user-signup {
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    padding: 11px 34px;
+    font-size: 2rem;
+    line-height: 16px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #ef5350;
+    border-color: #ea1c18;
+    cursor: pointer;
+}
+
+.user-signin {
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    padding: 11px 34px;
+    font-size: 2rem;
+    line-height: 16px;
+    border-radius: 3px;
+    color: #42a5f5;
+    background-color: transparent;
+    background-image: none;
+    border-color: #42a5f5;
+    cursor: pointer;
+}
+
+.icon-lagre {
+    font-size: 2.5rem !important;
+    position: relative;
+    transform: translateY(-10%);
+    margin: 0 .5rem;
+}
+
+.nav-main {
+    display: block;
+    font-size: 1.4rem;
+    list-style: none;
+    font-weight: 600;
+    padding: 2rem 0;
+}
+
+.text-header {
+    color: rgba(234, 236, 238, .6);
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+}
+
+.color-text:hover {
+    color: #0b72c6;
+    background-color: black;
+}
+
+.color-text {
+    color: rgba(234, 236, 238, .6);
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    color: rgba(234, 236, 238, .6);
+    display: flex;
+    align-items: center;
+}
+
+
+/* banner css */
+
+.banner-course {
+    position: relative;
+    width: 100%;
+    height: 24rem;
+    background-position: center;
+    background-size: cover;
+    z-index: -99;
+    background-image: url(https://marketplace.canva.com/EAEiMFwXgE0/2/0/1600w/canva-grey-minimalist-english-language-class-classroom-banner-2303qJKFEp0.jpg);
+}
+
+.black-bg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(58, 57, 57);
+    opacity: 0.8;
+    z-index: -98;
+}
+
+.banner-content {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    line-height: 4rem;
+    font-size: 2rem;
+}
+
+.main-content {
+    width: 100%;
+    height: 100vh;
+    background-color: #f5f5f5;
+    position: relative;
+    padding: 2rem 0;
+}
+
+.content-search {
+    position: relative;
+    width: 80%;
+    height: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search__input {
+    width: 90%;
+    height: 60%;
+}
+
+.search__input>input {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    padding: 0 5px;
+    border: 1px solid rgb(179, 176, 176);
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+    outline: none;
+}
+
+.search__input>input:focus {
+    outline: 1px solid rgb(87, 87, 240);
+}
+
+.search__btn {
+    width: 60px;
+    height: 60%;
+}
+
+.search__btn>button {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: 1px solid rgb(179, 176, 176);
+    background-color: #f5f5f5;
+    border-radius: 0 5px 5px 0;
+}
+
+.search__btn>button:hover {
+    background-color: #f0f0f0;
+}
+
+.icon-search {
+    font-size: 2.4rem !important;
+}
+
+.content-title {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    font-size: 3rem;
+    margin-top: 4rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(83, 82, 82, .1);
+}
+
+.icon-title {
+    font-size: 3.6rem !important;
+    position: relative;
+    transform: translateY(10%);
+    margin-right: 1rem;
+}
+
+.content-list {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: start;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-course {
+    background-color: white;
+    width: 31%;
+    font-size: 1.6rem;
+    margin-top: 5rem;
+}
+
+.card-course:hover {
+    box-shadow: 4px 4px 16px rgb(224, 222, 222), -4px -4px 16px rgb(224, 222, 222);
+}
+
+.image-course {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-course>img {
+    width: 100%;
+    height: 18rem;
+}
+
+.image-course:hover .black-bg--img {
+    display: block;
+}
+
+.image-course:hover .content--img {
+    display: flex;
+}
+
+.black-bg--img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 99;
+    display: none;
+}
+
+.content--img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+}
+
+.btn--white {
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    padding: 1rem 0;
+    cursor: pointer;
+    font-weight: 500;
+    background-color: white;
+    border-color: white;
+}
+
+.btn--white:hover {
+    background-color: #c6cace;
+    border-color: #b7bbbe;
+}
+
+.btn--blue {
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    background-color: #530ad4;
+    border-color: #530ad4;
+    color: white;
+    font-weight: 500;
+    padding: 1rem 0;
+    cursor: pointer;
+}
+
+.btn--blue:hover {
+    background-color: #42a5f5;
+    border-color: #42a5f5;
+}
+
+.title-course {
+    font-weight: bold;
+    padding: 0 2rem;
+    font-size: 1.8rem;
+    margin: 2rem 0;
+}
+
+.brand-course {
+    padding: 0 2rem;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+}
+
+.brand-course>span {
+    background-color: #ffca28;
+    color: #222c37!important;
+    display: inline-block;
+    padding: .5rem 2rem;
+    border-radius: 2rem;
+    font-weight: 600;
+}
+
+.amount-course {
+    background-color: #fbfbfc;
+    padding: 1rem 2rem;
+    margin: 2rem 0;
+    font-weight: 600;
+    color: #5a5c5e;
+}
+
+.icon-card {
+    font-size: 2rem !important;
+    margin-right: 1rem;
+    position: relative;
+    transform: translateY(10%);
+}
+
+.author--course {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: #5a5c5e;
+    margin-bottom: 3rem;
+}
+
+.author-avatar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 2px solid rgb(168, 176, 241);
+    margin: 0 1rem;
+}
+
+.link-title {
+    text-decoration: none;
+    color: black;
+    display: -webkit-box;
+    max-height: 5rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    line-height: 2.4rem;
+}

@@ -12,4 +12,6 @@ export const blog$ = (state) => state.blogs.data;
 
 export const quiz$ = (state) => state.quizs.data;
 
+export const mycourse$ = (state) => state.mycourses.data;
+
 
