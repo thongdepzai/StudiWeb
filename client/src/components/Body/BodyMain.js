@@ -45,15 +45,22 @@ const useStyle =    makeStyles((theme)=> ({
         <Grid container spacing={1} alignItems="stretch" >
 
            {videos.map((video)=>{
-               if( Themes === video.Themes  )
+               if( Themes === video.Themes )
                 {     
                     return(
-
                         <Grid item xs={12}  sm={3}>
                         <CardVideo key={video.id} video={video} />
                         </Grid>
-                    )  
-                           
+                    )                             
+                }
+
+                if(Themes === "home")
+                {
+                    return(
+                        <Grid item xs={12}  sm={3}>
+                        <CardVideo key={video.id} video={video} />
+                        </Grid>
+                    )
                 }
         
            })}

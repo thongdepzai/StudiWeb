@@ -16,6 +16,7 @@ import TheatersIcon from '@mui/icons-material/Theaters';
 import {useDispatch,useSelector} from 'react-redux'
 import * as actions from '../../redux/actions'
 import {videoState$} from '../../redux/selector'
+import "./body.css"
 
 
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -59,7 +60,6 @@ export default function BodyList() {
      
 
      
-  
   })
 
      const dispatch = useDispatch();
@@ -87,7 +87,7 @@ export default function BodyList() {
     >
       <nav component="div" aria-label="main mailbox folders">
         <List>
-        <Link to=""  className={classes.link}>
+        <Link to={"/HomeVideo/"+"home"}  className={classes.link}>
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>

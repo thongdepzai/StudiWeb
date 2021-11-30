@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
+    font-size: 1.6rem;
 }
 .blog__content{
     width: 69%;
@@ -68,5 +69,8 @@
     text-transform: capitalize;
     cursor: pointer;
 
+}
+.MuiTypography-body1{
+    font-size: 1.6rem !important;
 }
 

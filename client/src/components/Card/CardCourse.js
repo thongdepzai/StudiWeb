@@ -11,6 +11,7 @@ import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 export default function CardCourse({course}){
     return(
         <div className="card-course">
+       
         <div className="image-course">
             <img src={course.img} alt='ok'/>
             <div className="black-bg--img"></div>
@@ -20,7 +21,7 @@ export default function CardCourse({course}){
             </div>
         </div>
         <div className="title-course">
-            <Link className="link-title" to='#'>{course.Title}</Link>
+            <Link className="link-title" to={"/detail-course/"+course.id}>{course.Title}</Link>
         </div>
         <div className="brand-course">
             <span>{course.Name}</span>
@@ -44,6 +45,7 @@ export default function CardCourse({course}){
             <span>{course.Price} $$ </span>
             
         </div>
+      
     </div>
     )
 }

@@ -27,6 +27,7 @@ from Views.DictionaryViews import GetAllDictionarry
 from Views.CustomerViews import SigupView, SiginView
 from Views.CommentViews import GetAllComment, UpdateComment, DeleteComment, CreateComment
 from Views.BlogViews import GetAllBlog
+from Views.MyCoursesView import GetAllMyCourses,PostMyCourses
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,4 +41,6 @@ urlpatterns = [
     path('Comment/update', UpdateComment.as_view()),
     path('Comment/delete', DeleteComment.as_view()),
     path('Comment/create', CreateComment.as_view()),
+    path('MyCourse/', GetAllMyCourses.as_view()),
+    path('MyCourse/post', PostMyCourses.as_view()),
 ]

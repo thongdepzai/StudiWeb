@@ -15,6 +15,7 @@ export default function PrimaryFoot(){
      const useStyles = makeStyles((theme) => ({
         root: {
           flexGrow: 1,
+          fontSize: "1.6rem",
           
         },
         paper: {

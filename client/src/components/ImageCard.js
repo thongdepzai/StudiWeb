@@ -19,12 +19,12 @@ const useStyles = makeStyles({
   title: {
     fontFamily: 'Nunito',
     fontWeight: 'bold',
-    fontSize: '2rem',
+    fontSize: '3rem',
     color: '#fff',
   },
   desc: {
     fontFamily: 'Nunito',
-    fontSize: '1.1rem',
+    fontSize: '1.8rem',
     color: '#ddd',
   },
 });

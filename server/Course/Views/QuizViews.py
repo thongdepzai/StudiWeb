@@ -5,7 +5,6 @@ from rest_framework import status
 from Course.models import Quiz
 from Serializers.QuizSerializers import GetAllQuizSerializers
 
-
 class GetAllQuiz(APIView):
     def get(self, request):
         list_quiz=  Quiz.objects.all()

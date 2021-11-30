@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
+import './course.css'
 
 
-export default function PayPal(){
+export default function PayPal(props){
     const paypal = useRef()
 
     useEffect(()=>{
@@ -18,7 +19,7 @@ export default function PayPal(){
                     purchase_units: [{
                         "amount": {
                             "currency_code": "USD",
-                            "value": 99
+                            "value": props.price,
                         }
                     }]
                 });
@@ -46,7 +47,8 @@ export default function PayPal(){
 
     return(
         <div>
-            <div ref={paypal}></div>
+            <div className="paypal-success" id="paypal-button-container" ref={paypal}></div>
+
         </div>
     )
 }

@@ -48,3 +48,32 @@
 .searchvideo__btn>button:hover {
     background-color: #f0f0f0;
 }
+
+.search-container{
+    width: 100%;
+    display: flex;
+    margin-top: 100px;
+
+}
+.body-list{
+    width: 25%;
+}
+.list-card{
+    width: 75%;
+    
+}
+
+/* home watch */
+.home-watch{
+    width:90%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 100px;
+}
+.hw-video{
+    width: 70%;
+}
+.hw-listvideo{
+    width: 30%;
+}

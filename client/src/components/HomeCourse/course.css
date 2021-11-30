@@ -410,3 +410,9 @@ html {
     -webkit-line-clamp: 2;
     line-height: 2.4rem;
 }
+
+.paypal-success {
+    font-size: 2rem;
+    color: green;
+
+}

@@ -294,6 +294,7 @@ function QuizPage(){
                     </div>
                 </div>
                 <div className="box__btn">
+                    {/* <Link> </Link> */}
                    <a className="btn-exit" href="/">Exit</a>
                 </div>
 

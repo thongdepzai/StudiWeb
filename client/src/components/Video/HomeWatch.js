@@ -4,6 +4,7 @@ import HearderHome from '../Home/HeaderHome';
 import {  CssBaseline } from '@material-ui/core';
 import BodyListCard from '../Body/BodyListCard';
 import BodyWatch from '../Body/BodyWatch';
+import "./video.css"
 
 
 
@@ -36,33 +37,39 @@ const useStyle =    makeStyles((theme)=> ({
     const {id} = useParams()
     const dispatch = useDispatch();
     const videos =useSelector(videoState$);
+
     React.useEffect(()=>{
         dispatch(actions.getVideos.getVideosRequest())
     },[dispatch]);
 
-    console.log(videos)
      const classes =useStyle();
     return <div >
         <SearchVideo/>
         <CssBaseline/>
         <HearderHome/>
-        <BodyListCard />
+
+        <div className="home-watch">
+            <div className="hw-video">
+                {
+                videos.map(video=>{
+                    if(video.id == id)
+                    {           
+                        return(
+                                <div>     
+                                <BodyWatch  key={video.id} video={video}  />
+                                </div>
+                        )
+
+                    }
+                })}
+            </div>
+            <div className="hw-listvideo">
+            <BodyListCard />
+            </div>
+        </div>
         
-        {
-        videos.map(video=>{
-            if(video.id == id)
-            {
-
-           
-                return(
-                        <div>
-                        
-                        <BodyWatch  key={video.id} video={video}  />
-                        </div>
-                )
-
-            }
-        })}
+        
+        
 
 
 

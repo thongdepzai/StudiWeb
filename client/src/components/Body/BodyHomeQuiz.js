@@ -17,6 +17,9 @@ const useStyle =    makeStyles((theme)=> ({
         backgroundColor: "#333",
       },
 
+  },
+  text:{
+    fontSize:'1.6rem',
   }
 
 }));
@@ -33,7 +36,7 @@ const useStyle =    makeStyles((theme)=> ({
             <ListItemButton>
             <Button  >
               
-              <p>  Unit {unit} </p>
+              <p className={classes.text}>  Unit {unit} </p>
           </Button>
             </ListItemButton>
         </ListItem>

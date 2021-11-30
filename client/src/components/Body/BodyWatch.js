@@ -5,35 +5,16 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import ReactPlayer from 'react-player';
 import {makeStyles} from '@material-ui/core/styles';
+import "./body.css"
 
 
-
-
-const useStyle =    makeStyles((theme)=> ({
-  
-    root:{
-        marginRight:500,
-        position: 'static',
-        marginTop: 87,
-        left: theme.spacing(2),
-        width: 1100,
-        height:600,
-        
-
-
-        
-    }
-
-}));
 export default function CardVideo({video}) {
-    const classes =useStyle();
 
   return (
-    <Card className={classes.root}>
+    <Card className="card-video">
     <CardActionArea>
     <ReactPlayer
-      width='1100px'
-      height='500px'
+      width='100%'
 
       url={video.Video}
       controls='true'
