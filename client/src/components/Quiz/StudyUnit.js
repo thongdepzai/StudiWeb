@@ -125,7 +125,7 @@ export default function VerticalTabs() {
         </div>
 
       {/* tu vung va chu thich */}
-        <div className="box_right">
+        {/* <div className="box_right">
             {
               dictionary.map(dic => (
 
@@ -146,7 +146,7 @@ export default function VerticalTabs() {
            
             
          
-        </div>
+        </div> */}
 
       </div>       
         
@@ -162,7 +162,7 @@ export default function VerticalTabs() {
 
               return(
                 <ReactPlayer 
-              width='1300px'
+              width='600px'
               height='500px'
               controls='true'
               url={video.Video}

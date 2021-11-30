@@ -3,6 +3,7 @@ import './course.css';
 import CourseSidebar from "./CourseSidebar";
 import Banner from "./Banner";
 import CardCourse from "../Card/CardCourse";
+import NavBar from "./NavBar";
 
 import { Link } from 'react-router-dom';
 
@@ -20,6 +21,7 @@ export default function MainPage(){
                 <CourseSidebar/>
             </div>
             <div className="course-content">
+                <NavBar/>
                 <Banner/>
                 <div className="main-content">
                     <div className="content-search">
