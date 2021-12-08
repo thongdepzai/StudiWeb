@@ -47,7 +47,7 @@ export default function Routers(){
                 {/* {search} */}
                 <Route exact path="/SearchVideo/:searchInput" component={ListSearchVideo}/>
 
-                <Route component={Home} />
+                <Route component={MainPage} />
 
             </Switch>
         </div>

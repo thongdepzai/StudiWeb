@@ -87,7 +87,7 @@ const useStyle =    makeStyles((theme)=> ({
      const deleteLocal = () =>{
         localStorage.removeItem("id",undefined)
         localStorage.removeItem("name",undefined)
-        history.push("/") //redirect react hooks
+        history.push("/home-course") //redirect react hooks
       }
 
     const Header1 = (
@@ -97,7 +97,7 @@ const useStyle =    makeStyles((theme)=> ({
           
         >
             <Toolbar className={classes.appbarWrapper}>
-            <Link to="/" className={classes.appbarTitle}>
+            <Link to="/home-course" className={classes.appbarTitle}>
             <h1  >  <span className={classes.colorText}>  MYSTUDY</span> </h1>
             </Link>
             
@@ -150,7 +150,7 @@ const useStyle =    makeStyles((theme)=> ({
         <div className={classes.root} id="header" >
         <AppBar className={classes.appbar} elevation={0}>
             <Toolbar className={classes.appbarWrapper}>
-            <Link to="/" className={classes.appbarTitle}>
+            <Link to="/home-course" className={classes.appbarTitle}>
             <h1  >  <span className={classes.colorText}>  MYSTUDY</span> </h1>
             </Link>
                 

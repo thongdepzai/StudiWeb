@@ -110,13 +110,20 @@ export default function VerticalTabs() {
         <div className="list_vocabulary">
           <List>
             {
-              dictionary.map(dic => (
+              dictionary.map(dic => {
 
-                //if(unit==slug)
+                //if(unit==slug
 
-                <p>{dic.El}</p>
+                if(dic.unit == Themes) 
+                {
+                  return(
+                    <div>
+                    <p>{dic.El}</p>
+                    </div>
+                  )
+                }
 
-              ))
+              })
             }
             
           </List>
@@ -127,21 +134,20 @@ export default function VerticalTabs() {
       {/* tu vung va chu thich */}
         <div className="box_right">
             {
-              dictionary.map(dic => (
+              dictionary.map(dic => {
 
-                //if uit == slug
-                <div>
-                
-               
-                <p> <b> {dic.El} ()</b>  {dic.syn} ({dic.vi}) .</p>
-                <audio controls src={dic.Audio}/>
-                <p> <b> (a).</b> {dic.ExEla} .</p>
-                <p> <b> (b).</b> {dic.ExElb} .</p>
-                </div>
-
-
-
-              ))
+               if(dic.unit == Themes) 
+                {
+                  return(
+                    <div>
+                    <p> <b> {dic.El} ()</b>  {dic.syn} ({dic.vi}) .</p>
+                    <audio controls src={dic.Audio}/>
+                    <p> <b> (a).</b> {dic.ExEla} .</p>
+                    <p> <b> (b).</b> {dic.ExElb} .</p>
+                    </div>
+                  )
+                }
+              })
             }
            
             
@@ -162,9 +168,8 @@ export default function VerticalTabs() {
 
               return(
                 <ReactPlayer 
-              width='1300px'
-              height='500px'
-              controls='true'
+                className="video-grammar"
+                controls='true'
               url={video.Video}
               />
 

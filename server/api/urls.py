@@ -24,7 +24,7 @@ sys.path.append(lib_path)
 from Views.QuizViews import GetAllQuiz
 from Views.StudiVideoViews import GetAllStudiVideo
 from Views.DictionaryViews import GetAllDictionarry
-from Views.CustomerViews import SigupView, SiginView
+from Views.CustomerViews import SigupView, SiginView ,UpdateListCourseView,UpdateCustomer
 from Views.CommentViews import GetAllComment, UpdateComment, DeleteComment, CreateComment
 from Views.BlogViews import GetAllBlog
 from Views.MyCoursesView import GetAllMyCourses,PostMyCourses
@@ -43,4 +43,6 @@ urlpatterns = [
     path('Comment/create', CreateComment.as_view()),
     path('MyCourse/', GetAllMyCourses.as_view()),
     path('MyCourse/post', PostMyCourses.as_view()),
+    path('UpdateLCourse/', UpdateListCourseView.as_view()),
+    path('UpdateCustomer/',UpdateCustomer.as_view()),
 ]

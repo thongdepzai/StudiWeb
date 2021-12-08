@@ -24,8 +24,7 @@ const useStyle =    makeStyles((theme)=> ({
 }));
 
  function BodyMain(){
-     
-
+    
     const {Themes} =useParams();
     const dispatch = useDispatch();
     const videos =useSelector(videoState$);
@@ -48,7 +47,7 @@ const useStyle =    makeStyles((theme)=> ({
                if( Themes === video.Themes )
                 {     
                     return(
-                        <Grid item xs={12}  sm={3}>
+                        <Grid item xs={12}  sm={12} md={6} lg={4} xl={3}>
                         <CardVideo key={video.id} video={video} />
                         </Grid>
                     )                             
@@ -57,7 +56,7 @@ const useStyle =    makeStyles((theme)=> ({
                 if(Themes === "home")
                 {
                     return(
-                        <Grid item xs={12}  sm={3}>
+                        <Grid item xs={12}  sm={12} md={6} lg={4} xl={3}>
                         <CardVideo key={video.id} video={video} />
                         </Grid>
                     )

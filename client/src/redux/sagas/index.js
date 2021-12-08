@@ -160,6 +160,17 @@ function* fetchQuizSaga(action){
 
 
 
+ function* editCustomerSaga(action){
+    try {
+        const customer = yield call(api.editCustomer, action.payload);
+        yield put(actions.editCustomer.editCustomersSuccess(customer));
+    } catch (error) {
+        console.log(error)
+        yield put(actions.editCustomer.editCustomersFailure(error))
+        
+    }
+}
+
 
 function* mySaga(){
 
@@ -177,6 +188,7 @@ yield takeLatest(actions.getBlogs.getBlogsRequest, fetchBlogSaga)
 yield takeLatest(actions.createBlogs.createBlogsRequest, createBlogSaga)      
 yield takeLatest(actions.getQuizs.getQuizsRequest, fetchQuizSaga)              
 yield takeLatest(actions.getMyCourse.getMyCoursesRequest, fetchMyCourseSaga)              
+yield takeLatest(actions.editCustomer.editCustomersRequest, editCustomerSaga)              
 
 
 

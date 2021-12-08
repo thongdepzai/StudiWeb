@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+# from djongo import models
 
 # Create your models here.
  
@@ -67,7 +68,7 @@ class MyCourses(models.Model):
     TimeStudy = models.CharField(max_length=500,default="")
     Location = models.CharField(max_length=500,default="")
     Timedeadline = models.CharField(max_length=500,default="")
-    Price = models.CharField(max_length=500,default="")
+    Price = models.FloatField (null=True)
     img = models.CharField(max_length=500,default="")
 
     def __str__(self):
@@ -79,8 +80,8 @@ class Customer(models.Model):
     Email = models.EmailField(max_length=200)
     Pass = models.CharField(max_length=100)
     Sex = models.CharField(max_length=200,default="")
-    FaCourse = ArrayField(models.CharField(max_length=100,default=""),default=list)
-    MyCourse = ArrayField(models.CharField(max_length=100,default=""),default=list)  
+    # FaCourse = ArrayField(models.CharField(max_length=500,default=list))
+    # MyCourse = ArrayField(models.CharField(max_length=500,default=list))
 
     def __str__(self):
         return self.Name

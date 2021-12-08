@@ -43,7 +43,7 @@ const useStyle =    makeStyles((theme)=> ({
     },[dispatch]);
 
      const classes =useStyle();
-    return <div >
+    return <div style={{height: "1000px"}} >
         <SearchVideo/>
         <CssBaseline/>
         <HearderHome/>

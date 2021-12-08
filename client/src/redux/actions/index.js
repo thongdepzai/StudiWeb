@@ -19,7 +19,13 @@ export const postCustomer = createActions({
 })
 
 
+export const editCustomer = createActions({
 
+    editCustomersRequest: (payload) => payload,
+    editCustomersSuccess: (payload) => payload,
+    editCustomersFailure: (err) => err,
+
+})
 
 export const getLogin = createActions({
     getLoginRequest: undefined,

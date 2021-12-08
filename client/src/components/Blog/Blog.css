@@ -20,11 +20,11 @@
 .title--text{
     margin-left: 5%;
 }
-.content--img{
+.content-img{
     width: 90%;
     height: 500px;
-    position: relative;
-    left: 50%;
+    position: relative; 
+     left: 50%;
     transform: translateX(-50%);
 }
 .content--text{
@@ -71,6 +71,9 @@
 
 }
 .MuiTypography-body1{
+    font-size: 1.6rem !important;
+}
+.MuiTypography-body2{
     font-size: 1.6rem !important;
 }
 

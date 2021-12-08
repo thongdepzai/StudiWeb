@@ -76,4 +76,48 @@
 }
 .hw-listvideo{
     width: 30%;
+    display: flex;
+    justify-content: end;
+}
+@media screen and (max-width: 479px) {
+    #sidebar-homevideo{
+        width: 100px;
+    }
+    .makeStyles-root-13{
+        margin-left: 110px !important;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .home-watch{
+        flex-direction: column;
+    }
+    .hw-listvideo{
+        margin-top: 3rem;
+        width: 100%;
+    }
+    .hw-video{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .home-watch{
+        flex-direction: column;
+    }
+    .hw-listvideo{
+        margin-top: 3rem;
+        width: 100%;
+    }
+    .hw-video{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1480px) {
+    
+}
+
+@media screen and (min-width: 1480px) {
+    
 }

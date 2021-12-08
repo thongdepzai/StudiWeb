@@ -112,7 +112,7 @@ export default function DetailBlog() {
                                                 </h2>
                                             </div>
                                             <img
-                                                className="content--img" // lien qua den css
+                                                className="content-img" // lien qua den css
                                                 onClick={openModal}
                                                 src={blog.Filepost} />
 
@@ -121,14 +121,8 @@ export default function DetailBlog() {
 
                                             </Typography>
 
-
-
                                         </div>
-
-
                                     )
-
-
                                 }
                             })}
                     </div>
@@ -144,44 +138,31 @@ export default function DetailBlog() {
 
                         blogs.map((blog) => (
                             <div className="blog__sidebar--item">
-                                 <Link className={classes.link} to={"/Detail/"+blog.id}>
+                                 
                                 <div className="item--img">
+                                <Link className={classes.link} to={"/Detail/"+blog.id}>
                                     <img className="sidebar--img" src={blog.Filepost} />
+                                </Link>
                                 </div>
                                 <div className="item--title">
+                                    <Link className={classes.link} to={"/Detail/"+blog.id}>
                                     <h3>{blog.Title}</h3>
+                                    </Link>
                                 </div>
-                                </Link>
+                                
                             </div>
 
                         ))
 
                     }
-
-                    <div className="blog__sidebar--item">
+                    {/* <div className="blog__sidebar--item">
                         <div className="item--img">
                             <img className="sidebar--img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAcA4gFdnECzkrIXP_8sFtOpLkNR4Pzj6mQsnPw-UO1p1ieeLFaHWDOAQlNSsOq_g0nYU&usqp=CAU" />
                         </div>
                         <div className="item--title">
                             <h3>Title của blog mới tạo</h3>
                         </div>
-                    </div>
-                    <div className="blog__sidebar--item">
-                        <div className="item--img">
-                            <img className="sidebar--img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAcA4gFdnECzkrIXP_8sFtOpLkNR4Pzj6mQsnPw-UO1p1ieeLFaHWDOAQlNSsOq_g0nYU&usqp=CAU" />
-                        </div>
-                        <div className="item--title">
-                            <h3>Title của blog mới tạo</h3>
-                        </div>
-                    </div>
-                    <div className="blog__sidebar--item">
-                        <div className="item--img">
-                            <img className="sidebar--img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAcA4gFdnECzkrIXP_8sFtOpLkNR4Pzj6mQsnPw-UO1p1ieeLFaHWDOAQlNSsOq_g0nYU&usqp=CAU" />
-                        </div>
-                        <div className="item--title">
-                            <h3>Title của blog mới tạo</h3>
-                        </div>
-                    </div>
+                    </div> */}
                 </div>
 
             </div>

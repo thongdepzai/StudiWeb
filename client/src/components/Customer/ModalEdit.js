@@ -4,15 +4,18 @@ import { makeStyles } from '@material-ui/core/styles';
 import { hideModal } from '../../redux/actions';
 import Divider from '@mui/material/Divider';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 
 
 import * as actions from '../../redux/actions'
 import {modalState$} from '../../redux/selector'
 import { useSelector, useDispatch } from 'react-redux'
+import {useHistory } from 'react-router-dom'
 import { createBlogs } from '../../redux/actions';
 
 
+// import Comments from './Comments';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -50,21 +53,30 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-export default function ModalCreate({blog}){
+export default function ModalEdit(){
 
     const classes =useStyles();
     const dispatch = useDispatch()
+    const history = useHistory()
+
+    const idUser = localStorage.getItem('id')
+    const name = localStorage.getItem('name')
+
     const [data,setData] =React.useState({
-        Filepost:'',
-        Title:'',
-        Content:'',
-        Summary:'',    
+        id:idUser,
+        Name:'',
+        Birthday:'',
+        Email:'',    
+        Pass:'',    
+        Sex:'',    
     })
 
     
 
     const onClose = React.useCallback(()=>{
         dispatch(hideModal())
+        // dispatch(actions.getLogin.getLoginRequest())
+        //delelocalstore
 
     },[dispatch])
 
@@ -72,79 +84,93 @@ export default function ModalCreate({blog}){
 
 
     const onSubmit = React.useCallback(()=>{
-    // console.log( data)
-    // history.push("/Blog/") //redirect react hooks
-    dispatch(createBlogs.createBlogsRequest(data))
+    console.log( data)
+    // history.push("/Blog/")   //redirect react hooks
+    dispatch(actions.editCustomer.editCustomersRequest(data))
     dispatch(hideModal())
 
     },[data,dispatch])
 
    
-   
-
-
     const body = (
 
         <div className={classes.paper}>
         <form className={classes.form} noValidate>
         <Grid container spacing={2}>
-
         <Grid item xs={12}>
             <TextField
               variant="outlined"
               required
               fullWidth
-              id="Filepost"
-              label="Filepost"
-              name="Filepost"
-              autoComplete="Filepost"
-              value={data.Filepost}
-              onChange={(e)=>setData({...data,Filepost:e.target.value})}
+              id="Name"
+              label="Name"
+              name="Name"
+              autoComplete="Name"
+              value={data.Name}
+              onChange={(e)=>setData({...data,Name:e.target.value})}
             />
-          </Grid>     
-
-          <Grid item xs={12}>
+          </Grid>
+        
+          <Grid item xs={12} sm={8}>
+            <TextField
+              autoComplete="birthday"
+              name="birthday"
+              variant="outlined"
+              required
+              fullWidth
+              id="birthday"
+              label="Birthday DD/MM/YYYY"
+              value={data.Birthday}
+              onChange={(e)=>setData({...data,Birthday:e.target.value})}
+              autoFocus
+            />
+          </Grid>
+          <Grid item xs={12} sm={4}>
             <TextField
               variant="outlined"
               required
               fullWidth
-              id="Title"
-              label="Title"
-              name="Title"
-              autoComplete="Title"
-              value={data.Title}
-              onChange={(e)=>setData({...data,Title:e.target.value})}
+              id="Sex"
+              label="Sex"
+              name="Sex"
+              autoComplete="Sex"
+              value={data.Sex}
+              onChange={(e)=>setData({...data,Sex:e.target.value})}
             />
           </Grid>
           <Grid item xs={12}>
-            <TextareaAutosize className={classes.textarea}
+            <TextField
               variant="outlined"
               required
               fullWidth
-              rowsMax={15}
-              rowsMin={10}
-              placeholder='Content'
-              id="Content"
-              label="Content"
-              name="Content"
-              autoComplete="Content"
-              value={data.Content}
-              onChange={(e)=>setData({...data,Content:e.target.value})}
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              value={data.Email}
+              onChange={(e)=>setData({...data,Email:e.target.value})}
             />
-          </Grid>   
+          </Grid>
           <Grid item xs={12}>
             <TextField
               variant="outlined"
               required
               fullWidth
-              id="Summary"
-              label="Summary"
-              name="Summary"
-              autoComplete="Summary"
-              value={data.Summary}
-              onChange={(e)=>setData({...data,Summary:e.target.value})}
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              value={data.Pass}
+              onChange={(e)=>setData({...data,Pass:e.target.value})}
             />
-          </Grid>       
+          </Grid>
+          {/* <Grid item xs={12}>
+            <FormControlLabel
+              control={<Checkbox value="allowExtraEmails" color="primary" />}
+              label="I want to receive inspiration, marketing promotions and updates via email."
+            />
+          </Grid> */}
         </Grid>
         <Button
           fullWidth
@@ -153,7 +179,7 @@ export default function ModalCreate({blog}){
           className={classes.submit}
           onClick={onSubmit}
         >
-         Create
+          UpDate
         </Button>
         
       </form>

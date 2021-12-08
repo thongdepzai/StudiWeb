@@ -10,8 +10,7 @@ import { Link } from "react-router-dom";
 
 
     export default function SearchVideo(){
-    const videos =useSelector(videoState$); 
-
+        
     const [searchInput, setSearchInput] = useState(' ');
     // const [filteredResults, setFilteredResults] = useState([]);
  
@@ -44,11 +43,13 @@ import { Link } from "react-router-dom";
                 />
             </div>
             <div className="searchvideo__btn" >
-                <Link to={"/SearchVideo/"+searchInput}>
-                <button type="submit">                   
+                
+                <button type="submit">
+                <Link to={"/SearchVideo/"+searchInput}>                   
                     <SearchIcon/>
+                    </Link>
                 </button>
-                </Link>
+              
 
             </div>
         </div>

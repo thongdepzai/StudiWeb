@@ -6,6 +6,7 @@ import { CardActionArea } from '@mui/material';
 import ReactPlayer from 'react-player';
 import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+import "../Quiz/quiz.css"
 
 const useStyles = makeStyles((theme) => ({
 
@@ -30,7 +31,8 @@ export default function CardVideo({video}) {
       <CardActionArea>
       <Link className={classes.link} to={"/Watch/"+video.id} >
       <ReactPlayer
-        width='345'
+      className="card-video"
+        width='100%'
         height='1000'
         url={video.Video}
         

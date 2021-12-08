@@ -7,6 +7,7 @@ import { useParams } from 'react-router';
 import {useDispatch,useSelector} from 'react-redux'
 import * as actions from '../../redux/actions'
 import {quiz$} from '../../redux/selector'
+import { Link } from 'react-router-dom';
 
 
 
@@ -295,7 +296,7 @@ function QuizPage(){
                 </div>
                 <div className="box__btn">
                     {/* <Link> </Link> */}
-                   <a className="btn-exit" href="/">Exit</a>
+                   <Link className="btn-exit" to={"/StudyUnit/"+skill}>Exit</Link>
                 </div>
 
             </div>

@@ -13,12 +13,10 @@ import ReactPlayer from 'react-player';
 import BodyList from '../Body/BodyList';
 
 
-
 import { useDispatch, useSelector } from 'react-redux'
 import * as actions from '../../redux/actions'
 import { videoState$ } from '../../redux/selector'
 import { useParams } from 'react-router-dom';
-
 
 
 
@@ -37,22 +35,29 @@ const useStyle = makeStyles((theme) => ({
 
 function ListSearchVideo() {
     const classes = useStyle();
-    const videos = useSelector(videoState$);
+    const videos = useSelector(videoState$);  //data store cua react
+
+
     const {searchInput} = useParams()
 
 
+
     const videoSearchs = useMemo(() => {
-        if (!searchInput) return videos;
+        if (!searchInput) return videos; //tra ve all
 
         return videos.filter((video) => {
             return (
-                video.Title.toLowerCase().includes(searchInput.toLowerCase()) 
+                video.Title.toLowerCase().normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/đ/g, 'd').replace(/Đ/g, 'D').includes(searchInput.toLowerCase().trim().normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/đ/g, 'd').replace(/Đ/g, 'D')) 
                 
             );
         });
-    }, [searchInput, videos]);
+    },[searchInput, videos]);
 
-    console.log("[]",videoSearchs)
+    // console.log("[]",videoSearchs)
 
 
     return (<div >

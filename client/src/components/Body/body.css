@@ -11,10 +11,66 @@
 }
 .css-h93ljk-MuiTypography-root{
     font-size: 2rem !important;
+    height: 50px;
 }
 .css-ahj2mt-MuiTypography-root{
     font-size: 2rem !important;
 }
-.card-video{
+.card--video{
     width: 100%;
+}
+.img-video{
+    width: 100% !important;
+    height: 600px !important;
+}
+.css-rwxl96-MuiCardContent-root{
+    width: 100% !important;
+}
+
+
+@media screen and (max-width: 479px) {
+    #sidebar-homevideo{
+        width: 100px;
+    }
+    .makeStyles-root-13{
+        margin-left: 110px !important;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    #sidebar-homevideo{
+        width: 200px;
+    }
+    .makeStyles-root-13{
+        margin-left: 210px !important;
+    }
+    .css-1un9dax{
+        max-width: 400px !important;
+    }
+    .css-1un9dax{
+    position: relative !important;
+    }
+}   
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .css-1un9dax{
+        max-width: 500px !important;
+    }
+    .css-1un9dax{
+        position: relative !important;
+        }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1480px) {
+    .img-video{
+        
+        height: 400px !important;
+    }
+    .css-1un9dax{
+        max-width: 300px !important;
+    }
+}
+
+@media screen and (min-width: 1480px) {
+    
 }

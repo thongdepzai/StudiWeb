@@ -14,4 +14,6 @@ export const fetchBlog = () => axios.get(`${URL}/Blog/`);
 export const createBlog = (payload) => axios.post(`${URL}/Blog/`,payload);
 export const fetchQuiz = () => axios.get(`${URL}/quiz/`);
 export const fetchMyCourse = () => axios.get(`${URL}/MyCourse/`);
+export const editCustomer = (payload) => axios.post(`${URL}/UpdateCustomer/`,payload);
+
 

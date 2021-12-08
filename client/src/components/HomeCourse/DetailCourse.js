@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 import {useDispatch,useSelector} from 'react-redux'
 import * as actions from '../../redux/actions'
 import {mycourse$} from '../../redux/selector'
+import HeaderHome from '../Home/HeaderHome'
 
 
 
@@ -23,7 +24,9 @@ React.useEffect(()=>{
 },[dispatch]);
 
     return(
+        
         <div className="detailcourse">
+            <HeaderHome/>
 
                         {
                           mycourse.map(course => {

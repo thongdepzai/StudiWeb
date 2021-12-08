@@ -11,11 +11,10 @@ import "./body.css"
 export default function CardVideo({video}) {
 
   return (
-    <Card className="card-video">
+    <Card className="card--video">
     <CardActionArea>
     <ReactPlayer
-      width='100%'
-
+    className="img-video"
       url={video.Video}
       controls='true'
 
